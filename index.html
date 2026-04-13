@@ -1,331 +1,304 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>雅思寫作 — 100個高頻話題語料</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>雅思寫作練習</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-  :root {
-    --bg: #f7f6f2;
-    --surface: #ffffff;
-    --border: #e2e0d8;
-    --border-dark: #c8c5bb;
-    --text: #1a1916;
-    --text-muted: #6b6860;
-    --text-hint: #a09d97;
-    --accent: #4a3f8f;
-    --accent-light: #ede9fb;
-    --accent-mid: #7f77dd;
-    --green: #1D9E75;
-    --green-bg: rgba(29,158,117,0.10);
-    --red: #E24B4A;
-    --red-bg: rgba(226,75,74,0.09);
-    --star: #c8963a;
-    --radius: 10px;
-    --radius-sm: 6px;
-  }
+/* ── Shared variables ── */
+:root{
+  --bg:#f5f3ee;
+  --surface:#fff;
+  --surface2:#faf9f6;
+  --border:#e4e0d6;
+  --border2:#ccc8be;
+  --text:#1c1a16;
+  --muted:#6b6760;
+  --hint:#a8a49e;
+  --green:#1a7a52;
+  --green-bg:rgba(26,122,82,0.09);
+  --red:#b83232;
+  --red-bg:rgba(184,50,50,0.08);
+  --r:10px;--rs:6px;
+  /* Tab A — Vocab (purple) */
+  --va:#4a3f8f;
+  --va-light:#ede9fb;
+  --va-mid:#7f77dd;
+  --va-star:#c8963a;
+  /* Tab B — Sentences (green) */
+  --vb:#2d5016;
+  --vb-light:#eef4e6;
+  --vb-mid:#4a7a28;
+  --vb-gold:#7a5c10;
+  --vb-gold-bg:#fdf7e8;
+  --vb-blue:#1a4d7a;
+  --vb-blue-bg:#eaf2fb;
+  --vb-section:#ede9e0;
+}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.65}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ── Top nav / tab bar ── */
+.topnav{position:sticky;top:0;z-index:300;background:var(--surface);border-bottom:.5px solid var(--border);box-shadow:0 1px 8px rgba(0,0,0,0.07)}
+.topnav-inner{max-width:900px;margin:0 auto;display:flex;align-items:stretch}
+.tab-btn{flex:1;padding:14px 8px 12px;font-size:13px;font-family:inherit;border:none;background:transparent;cursor:pointer;color:var(--muted);border-bottom:3px solid transparent;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:3px;line-height:1.3}
+.tab-btn .tab-icon{font-size:18px}
+.tab-btn .tab-label{font-size:12px;font-weight:500}
+.tab-btn .tab-sub{font-size:10px;opacity:.65}
+.tab-btn:hover{color:var(--text);background:var(--bg)}
+.tab-btn.active-a{color:var(--va);border-bottom-color:var(--va)}
+.tab-btn.active-b{color:var(--vb);border-bottom-color:var(--vb)}
 
-  body {
-    font-family: 'Noto Sans TC', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    line-height: 1.6;
-  }
+/* ── Tab panels ── */
+.panel{display:none}
+.panel.active{display:block}
 
-  /* ── Header ── */
-  .site-header {
-    background: var(--accent);
-    color: #fff;
-    padding: 1.25rem 1.5rem 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 12px rgba(74,63,143,0.18);
-  }
-  .site-header h1 {
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-  }
-  .site-header p {
-    font-size: 12px;
-    opacity: 0.72;
-    margin-top: 2px;
-  }
+/* ── Shared header ── */
+.hd{color:#fff;padding:.85rem 1.25rem .75rem;position:sticky;top:57px;z-index:200}
+.hd-a{background:var(--va);box-shadow:0 2px 14px rgba(74,63,143,.2)}
+.hd-b{background:var(--vb);box-shadow:0 2px 14px rgba(45,80,22,.2)}
+.hd-inner{max-width:900px;margin:0 auto}
+.hd-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:.4rem}
+.hd h1{font-family:'Noto Serif TC',serif;font-size:15px;font-weight:600;flex:1}
+.hd-sub{font-size:10px;opacity:.6}
+.hd-stats{display:flex;gap:7px;flex-wrap:wrap}
+.hd-chip{background:rgba(255,255,255,0.14);border-radius:20px;padding:3px 10px;font-size:11px;white-space:nowrap}
+.hd-chip strong{font-weight:700}
 
-  /* ── Main container ── */
-  .container {
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 1rem 1rem 3rem;
-  }
+/* ── Wrap ── */
+.wrap{max-width:900px;margin:0 auto;padding:.9rem 1rem 5rem}
 
-  /* ── Stats bar ── */
-  .stats-bar {
-    display: flex;
-    gap: 10px;
-    margin: 1rem 0;
-    flex-wrap: wrap;
-  }
-  .stat-chip {
-    background: var(--surface);
-    border: 0.5px solid var(--border);
-    border-radius: 20px;
-    padding: 5px 14px;
-    font-size: 13px;
-    color: var(--text-muted);
-    white-space: nowrap;
-  }
-  .stat-chip strong { color: var(--text); font-weight: 700; }
+/* ── Shared controls ── */
+.ctrl-bar{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:.7rem}
+.search-wrap{flex:1;min-width:150px;position:relative}
+.search-wrap input{width:100%;padding:8px 12px 8px 32px;border:.5px solid var(--border2);border-radius:var(--rs);background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:border-color .15s}
+.search-icon{position:absolute;left:9px;top:50%;transform:translateY(-50%);color:var(--hint);font-size:13px;pointer-events:none}
+.btn{padding:6px 13px;border:.5px solid var(--border2);border-radius:var(--rs);background:var(--surface);color:var(--text);font-size:12px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:all .12s}
+.btn:hover{background:var(--bg)}
+.btn.pa{background:var(--va);color:#fff;border-color:var(--va);font-weight:500}
+.btn.pa:hover{background:#3b3174}
+.btn.pb{background:var(--vb);color:#fff;border-color:var(--vb);font-weight:500}
+.btn.pb:hover{background:#234010}
+.btn.danger{color:var(--red);border-color:var(--red)}
+.btn.danger:hover{background:var(--red-bg)}
+.btn.note-on{background:var(--vb-gold-bg);border-color:var(--vb-gold);color:var(--vb-gold);font-weight:500}
 
-  /* ── Controls ── */
-  .controls {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 0.75rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .search-wrap {
-    flex: 1;
-    min-width: 160px;
-    position: relative;
-  }
-  .search-wrap input {
-    width: 100%;
-    padding: 8px 12px 8px 36px;
-    border: 0.5px solid var(--border-dark);
-    border-radius: var(--radius-sm);
-    background: var(--surface);
-    color: var(--text);
-    font-size: 14px;
-    font-family: inherit;
-    outline: none;
-    transition: border-color 0.15s;
-  }
-  .search-wrap input:focus { border-color: var(--accent); }
-  .search-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-hint);
-    font-size: 15px;
-    pointer-events: none;
-  }
+/* ── Pill bars ── */
+.pill-bar{display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-bottom:.55rem}
+.pill-lbl{font-size:11px;color:var(--hint);margin-right:2px;white-space:nowrap}
+.pill{padding:4px 12px;border:.5px solid var(--border);border-radius:20px;background:var(--surface);color:var(--muted);font-size:12px;font-family:inherit;cursor:pointer;transition:all .12s}
+.pill:hover{border-color:var(--border2);color:var(--text)}
+.pill.on-a{background:var(--va-light);border-color:var(--va-mid);color:var(--va);font-weight:500}
+.pill.on-b{background:var(--vb-light);border-color:var(--vb-mid);color:var(--vb);font-weight:500}
 
-  .btn {
-    padding: 7px 14px;
-    border: 0.5px solid var(--border-dark);
-    border-radius: var(--radius-sm);
-    background: var(--surface);
-    color: var(--text);
-    font-size: 13px;
-    font-family: inherit;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.12s, border-color 0.12s;
-  }
-  .btn:hover { background: var(--bg); }
-  .btn.primary {
-    background: var(--accent);
-    color: #fff;
-    border-color: var(--accent);
-    font-weight: 500;
-  }
-  .btn.primary:hover { background: #3b3174; }
-  .btn.danger { color: var(--red); border-color: var(--red); }
-  .btn.danger:hover { background: var(--red-bg); }
+/* ── Mode hint bar ── */
+.mode-bar{background:var(--surface);border:.5px solid var(--border);border-radius:var(--rs);padding:6px 12px;margin-bottom:.7rem;font-size:12px;color:var(--muted)}
 
-  /* ── Mode / Filter pills ── */
-  .pill-bar {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 0.75rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .pill-label {
-    font-size: 12px;
-    color: var(--text-hint);
-    margin-right: 2px;
-    white-space: nowrap;
-  }
-  .pill {
-    padding: 5px 13px;
-    border: 0.5px solid var(--border);
-    border-radius: 20px;
-    background: var(--surface);
-    color: var(--text-muted);
-    font-size: 12px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.12s;
-  }
-  .pill:hover { border-color: var(--border-dark); color: var(--text); }
-  .pill.active {
-    background: var(--accent-light);
-    border-color: var(--accent-mid);
-    color: var(--accent);
-    font-weight: 500;
-  }
+/* ═══════════════════════════════════════════
+   TAB A — VOCAB PHRASES
+═══════════════════════════════════════════ */
+.vocab-card{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);margin-bottom:8px;overflow:hidden}
+.vocab-card:hover{box-shadow:0 2px 10px rgba(0,0,0,0.06)}
+.vocab-card.checked{border-left:3px solid var(--green)}
+.card-main{display:grid;grid-template-columns:30px 1fr 1fr 72px 34px;align-items:center;gap:8px;padding:10px 12px}
+.card-num{font-size:11px;color:var(--hint);font-family:'JetBrains Mono',monospace;text-align:right}
+.card-eng{font-size:13px;color:var(--text);font-family:'JetBrains Mono',monospace;line-height:1.45}
+.card-chi{font-size:13px;color:var(--muted);line-height:1.45}
+.card-stars{font-size:10px;color:var(--va-star);white-space:nowrap}
+.card-cb{display:flex;justify-content:center}
+.card-cb input[type=checkbox]{width:16px;height:16px;cursor:pointer;accent-color:var(--green)}
+.vocab-card.hide-eng .card-eng{opacity:0;pointer-events:none;user-select:none}
+.vocab-card.hide-chi .card-chi{opacity:0;pointer-events:none;user-select:none}
+.fill-row{display:flex;gap:8px;padding:0 12px 10px;flex-wrap:wrap}
+.fill-wrap-v{flex:1;min-width:120px;display:flex;flex-direction:column;gap:3px}
+.fill-label{font-size:10px;color:var(--hint)}
+.fill-input-v{padding:6px 9px;border:.5px solid var(--border2);border-radius:var(--rs);background:var(--bg);color:var(--text);font-size:13px;font-family:inherit;outline:none;transition:border-color .15s,background .15s;width:100%}
+.fill-input-v:focus{border-color:var(--va-mid);background:var(--surface)}
+.fill-input-v.correct{border-color:var(--green);background:var(--green-bg)}
+.fill-input-v.wrong{border-color:var(--red);background:var(--red-bg)}
+.fill-answer{font-size:11px;color:var(--red);display:none;padding-left:2px}
+.fill-answer.show{display:block}
 
-  /* ── Vocab card ── */
-  .vocab-card {
-    background: var(--surface);
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius);
-    margin-bottom: 8px;
-    overflow: hidden;
-    transition: box-shadow 0.15s;
-  }
-  .vocab-card:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
-  .vocab-card.checked { border-left: 3px solid var(--green); }
+/* ═══════════════════════════════════════════
+   TAB B — SENTENCE TRANSLATION
+═══════════════════════════════════════════ */
+.section-div{background:var(--vb-section);border-radius:var(--rs);padding:7px 14px;margin:1rem 0 .5rem;font-size:11.5px;font-weight:700;color:var(--vb-gold);letter-spacing:.06em;display:flex;align-items:center;gap:7px}
+.section-div::before{content:'';display:inline-block;width:3px;height:13px;background:var(--vb-gold);border-radius:2px;flex-shrink:0}
+.sent-card{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);margin-bottom:10px;overflow:hidden}
+.sent-card:hover{box-shadow:0 2px 14px rgba(0,0,0,.07)}
+.sent-card.done{border-left:3px solid var(--green)}
+.card-top{display:grid;grid-template-columns:28px 1fr 32px;gap:8px;align-items:start;padding:12px 14px 8px}
+.card-body{display:flex;flex-direction:column;gap:5px}
+.card-zh{font-family:'Noto Serif TC',serif;font-size:15px;line-height:1.55}
+.card-note{font-size:11.5px;color:var(--vb-gold);background:var(--vb-gold-bg);border:.5px solid #e8d5a0;border-radius:5px;padding:4px 9px;line-height:1.55;display:none}
+.card-note.show{display:block}
+.card-cb2{display:flex;justify-content:center;align-items:flex-start;padding-top:3px}
+.card-cb2 input{width:16px;height:16px;cursor:pointer;accent-color:var(--green)}
+.ans-area{padding:0 14px 12px 50px;display:flex;flex-direction:column;gap:10px}
+.ans-block{display:flex;flex-direction:column;gap:4px}
+.ans-label{font-size:10px;font-weight:700;letter-spacing:.07em;padding:2px 8px;border-radius:3px;display:inline-flex;align-items:center;align-self:flex-start;margin-bottom:1px}
+.ans-label.la{background:var(--vb-light);color:var(--vb-mid)}
+.ans-label.lb{background:var(--vb-blue-bg);color:var(--vb-blue)}
+.ans-ref{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--muted);line-height:1.6;padding:2px 0}
+.ans-ref.hidden{opacity:0;user-select:none;pointer-events:none;height:0;overflow:hidden;padding:0}
+.fill-wrap-s{display:flex;flex-direction:column;gap:3px}
+.fill-input-s{padding:7px 11px;border:.5px solid var(--border2);border-radius:var(--rs);background:var(--surface2);color:var(--text);font-size:13px;font-family:'JetBrains Mono',monospace;outline:none;transition:border-color .15s,background .15s;width:100%}
+.fill-input-s:focus{border-color:var(--vb-mid);background:var(--surface)}
+.fill-input-s.ok{border-color:var(--green);background:var(--green-bg)}
+.fill-input-s.no{border-color:var(--red);background:var(--red-bg)}
+.fill-hint-s{font-size:11px;color:var(--red);display:none;line-height:1.5;padding-left:2px}
+.fill-hint-s.show{display:block}
+.reveal-btn{align-self:flex-start;font-size:11px;padding:3px 10px;border:.5px solid var(--border);border-radius:20px;background:transparent;color:var(--muted);cursor:pointer;font-family:inherit;transition:all .12s;margin-top:2px}
+.reveal-btn:hover{background:var(--vb-section);color:var(--text)}
 
-  .card-main {
-    display: grid;
-    grid-template-columns: 30px 1fr 1fr auto 34px;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 12px;
-  }
-
-  @media (max-width: 540px) {
-    .card-main {
-      grid-template-columns: 26px 1fr auto 30px;
-    }
-    .card-chi { display: none; }
-    .card-main.hide-chi .card-chi { display: none; }
-  }
-
-  .card-num {
-    font-size: 11px;
-    color: var(--text-hint);
-    font-family: 'JetBrains Mono', monospace;
-    text-align: right;
-  }
-  .card-eng {
-    font-size: 13.5px;
-    color: var(--text);
-    font-family: 'JetBrains Mono', monospace;
-    line-height: 1.4;
-  }
-  .card-chi {
-    font-size: 13.5px;
-    color: var(--text-muted);
-    line-height: 1.4;
-  }
-  .card-stars { font-size: 10px; color: var(--star); white-space: nowrap; }
-  .card-cb { display: flex; justify-content: center; align-items: center; }
-  .card-cb input[type=checkbox] {
-    width: 16px; height: 16px;
-    cursor: pointer;
-    accent-color: var(--green);
-  }
-
-  /* hidden columns */
-  .vocab-card.hide-eng .card-eng { opacity: 0; pointer-events: none; user-select: none; }
-  .vocab-card.hide-chi .card-chi { opacity: 0; pointer-events: none; user-select: none; }
-
-  /* ── Fill row ── */
-  .fill-row {
-    display: flex;
-    gap: 8px;
-    padding: 0 12px 10px;
-    flex-wrap: wrap;
-  }
-  .fill-wrap {
-    flex: 1;
-    min-width: 120px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-  .fill-label { font-size: 10px; color: var(--text-hint); }
-  .fill-input {
-    padding: 6px 10px;
-    border: 0.5px solid var(--border-dark);
-    border-radius: var(--radius-sm);
-    background: var(--bg);
-    color: var(--text);
-    font-size: 13px;
-    font-family: inherit;
-    outline: none;
-    transition: border-color 0.15s, background 0.15s;
-    width: 100%;
-  }
-  .fill-input:focus { border-color: var(--accent); background: var(--surface); }
-  .fill-input.correct { border-color: var(--green); background: var(--green-bg); }
-  .fill-input.wrong { border-color: var(--red); background: var(--red-bg); }
-  .fill-answer {
-    font-size: 11px;
-    color: var(--red);
-    display: none;
-    padding-left: 2px;
-  }
-  .fill-answer.show { display: block; }
-
-  /* ── Empty state ── */
-  .empty { text-align: center; padding: 3rem 1rem; color: var(--text-hint); font-size: 14px; }
+/* ── Empty ── */
+.empty{text-align:center;padding:3rem 1rem;color:var(--hint);font-size:14px}
 </style>
 </head>
 <body>
 
-<header class="site-header">
-  <h1>雅思寫作 — 100個高頻話題語料</h1>
-  <p>點擊隱藏/顯示中英文 · 填空後點「批改」確認答案</p>
-</header>
-
-<div class="container">
-
-  <!-- Stats -->
-  <div class="stats-bar">
-    <div class="stat-chip">已學習 <strong id="st-learned">0</strong> / 100</div>
-    <div class="stat-chip">填空正確 <strong id="st-ok">0</strong></div>
-    <div class="stat-chip">填空錯誤 <strong id="st-no">0</strong></div>
+<!-- ── Top Tab Bar ── -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <button class="tab-btn active-a" id="tab-a-btn" onclick="switchTab('a')">
+      <span class="tab-icon">📚</span>
+      <span class="tab-label">高頻語料</span>
+      <span class="tab-sub">100個詞組</span>
+    </button>
+    <button class="tab-btn" id="tab-b-btn" onclick="switchTab('b')">
+      <span class="tab-icon">✍️</span>
+      <span class="tab-label">翻譯練習</span>
+      <span class="tab-sub">顧家北100句</span>
+    </button>
   </div>
+</nav>
 
-  <!-- Controls -->
-  <div class="controls">
-    <div class="search-wrap">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="search" placeholder="搜尋中文或英文..." />
+<!-- ══════════════════════════════════════════
+     PANEL A — HIGH FREQUENCY VOCAB
+══════════════════════════════════════════ -->
+<div class="panel active" id="panel-a">
+
+  <header class="hd hd-a">
+    <div class="hd-inner">
+      <div class="hd-top">
+        <h1>寫作必背：100個高頻話題語料</h1>
+      </div>
+      <div class="hd-stats">
+        <div class="hd-chip">已學習 <strong id="a-learned">0</strong>/100</div>
+        <div class="hd-chip">填空正確 <strong id="a-ok">0</strong></div>
+        <div class="hd-chip">填空錯誤 <strong id="a-no">0</strong></div>
+      </div>
     </div>
-    <button class="btn primary" id="btn-grade">✓ 批改填空</button>
-    <button class="btn" id="btn-clear">清除填空</button>
-    <button class="btn danger" id="btn-reset">重置勾選</button>
+  </header>
+
+  <div class="wrap">
+    <div class="ctrl-bar">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="a-search" placeholder="搜尋中文或英文…"/>
+      </div>
+      <button class="btn pa" id="a-grade">✓ 批改</button>
+      <button class="btn" id="a-clear">清除</button>
+      <button class="btn danger" id="a-reset">重置勾選</button>
+    </div>
+
+    <div class="pill-bar">
+      <span class="pill-lbl">顯示：</span>
+      <button class="pill on-a" data-amode="all">中英都顯示</button>
+      <button class="pill" data-amode="hide-chi">隱藏中文</button>
+      <button class="pill" data-amode="hide-eng">隱藏英文</button>
+    </div>
+
+    <div class="pill-bar">
+      <span class="pill-lbl">篩選：</span>
+      <button class="pill on-a" data-afilter="all">全部</button>
+      <button class="pill" data-afilter="learned">已勾選</button>
+      <button class="pill" data-afilter="unlearned">未勾選</button>
+      <button class="pill" data-afilter="5star">★★★★★</button>
+    </div>
+
+    <div id="a-list"></div>
+    <div id="a-empty" class="empty" style="display:none">沒有符合條件的詞彙</div>
   </div>
+</div>
 
-  <!-- Mode pills -->
-  <div class="pill-bar">
-    <span class="pill-label">顯示：</span>
-    <button class="pill active" data-mode="all">中英都顯示</button>
-    <button class="pill" data-mode="hide-chi">隱藏中文</button>
-    <button class="pill" data-mode="hide-eng">隱藏英文</button>
+<!-- ══════════════════════════════════════════
+     PANEL B — SENTENCE TRANSLATION
+══════════════════════════════════════════ -->
+<div class="panel" id="panel-b">
+
+  <header class="hd hd-b">
+    <div class="hd-inner">
+      <div class="hd-top">
+        <h1>顧家北 100句翻譯練習</h1>
+        <span class="hd-sub">手把手教你雅思寫作 6.0</span>
+      </div>
+      <div class="hd-stats">
+        <div class="hd-chip">已完成 <strong id="b-done">0</strong>/100</div>
+        <div class="hd-chip">批改正確 <strong id="b-ok">0</strong></div>
+        <div class="hd-chip">批改錯誤 <strong id="b-no">0</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="ctrl-bar">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="b-search" placeholder="搜尋中文或英文…"/>
+      </div>
+      <button class="btn pb" id="b-grade">✓ 批改</button>
+      <button class="btn" id="b-clear">清除</button>
+      <button class="btn danger" id="b-reset">重置勾選</button>
+      <button class="btn" id="b-note">📌 筆記</button>
+    </div>
+
+    <div class="pill-bar">
+      <span class="pill-lbl">模式：</span>
+      <button class="pill on-b" data-bmode="read">📖 閱讀</button>
+      <button class="pill" data-bmode="blank">✏️ 填空A+B</button>
+      <button class="pill" data-bmode="show-a">👁 顯示A，填B</button>
+      <button class="pill" data-bmode="show-b">👁 顯示B，填A</button>
+    </div>
+
+    <div class="pill-bar">
+      <span class="pill-lbl">篩選：</span>
+      <button class="pill on-b" data-bfilter="all">全部</button>
+      <button class="pill" data-bfilter="done">已勾選</button>
+      <button class="pill" data-bfilter="undone">未勾選</button>
+    </div>
+
+    <div id="b-modebar" class="mode-bar"></div>
+    <div id="b-list"></div>
+    <div id="b-empty" class="empty" style="display:none">沒有符合條件的句子</div>
   </div>
-
-  <!-- Filter pills -->
-  <div class="pill-bar">
-    <span class="pill-label">篩選：</span>
-    <button class="pill active" data-filter="all">全部</button>
-    <button class="pill" data-filter="learned">已勾選</button>
-    <button class="pill" data-filter="unlearned">未勾選</button>
-    <button class="pill" data-filter="5star">★★★★★ 重點</button>
-  </div>
-
-  <!-- Vocab list -->
-  <div id="vocab-list"></div>
-  <div id="empty" class="empty" style="display:none">沒有符合條件的詞彙</div>
-
 </div>
 
 <script>
-const DATA = [
+// ─────────────────────────────────────────────────────────────────
+// TAB SWITCHING
+// ─────────────────────────────────────────────────────────────────
+let currentTab = 'a';
+function switchTab(t){
+  currentTab = t;
+  document.getElementById('panel-a').classList.toggle('active', t==='a');
+  document.getElementById('panel-b').classList.toggle('active', t==='b');
+  document.getElementById('tab-a-btn').className = 'tab-btn' + (t==='a' ? ' active-a' : '');
+  document.getElementById('tab-b-btn').className = 'tab-btn' + (t==='b' ? ' active-b' : '');
+  // save tab preference
+  try{ localStorage.setItem('ielts_tab', t); }catch(e){}
+}
+try{
+  const saved = localStorage.getItem('ielts_tab');
+  if(saved === 'b') switchTab('b');
+}catch(e){}
+
+// ─────────────────────────────────────────────────────────────────
+// TAB A — VOCAB DATA & LOGIC
+// ─────────────────────────────────────────────────────────────────
+const VOCAB_DATA = [
   [1,"have access to","有……的機會","★★★★★"],
   [2,"get access to knowledge","獲取知識","★★★★★"],
   [3,"grasp skills","掌握技能","★★★★"],
@@ -428,195 +401,335 @@ const DATA = [
   [100,"unemployment rate","失業率","★★★★★"]
 ];
 
-// State
-let checked = {};
-let fillValues = {};
-let mode = 'all';
-let filter = 'all';
-let searchQ = '';
+let aChecked={}, aFills={}, aMode='all', aFilter='all', aSearch='';
+try{ const s=localStorage.getItem('ielts_ck'); if(s) aChecked=JSON.parse(s); }catch(e){}
+function aSave(){ try{ localStorage.setItem('ielts_ck',JSON.stringify(aChecked)); }catch(e){} }
 
-// Load saved state
-try {
-  const s = localStorage.getItem('ielts_checked');
-  if (s) checked = JSON.parse(s);
-} catch(e) {}
-
-function saveChecked() {
-  try { localStorage.setItem('ielts_checked', JSON.stringify(checked)); } catch(e) {}
+function aNorm(str){
+  return str.toLowerCase().replace(/[''`]/g,"'").replace(/[,\/·⋯…]/g,' ').replace(/\s+/g,' ').trim();
 }
-
-function normalize(str) {
-  return str.toLowerCase()
-    .replace(/[''`]/g, "'")
-    .replace(/[,\/·⋯…]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+function aCheckEng(input,eng){
+  const a=aNorm(input),b=aNorm(eng);
+  if(a===b) return true;
+  return eng.split(/[\/,]/).map(p=>aNorm(p.trim())).filter(p=>p.length>2).some(p=>a===p);
 }
-
-function isCorrectEng(input, eng) {
-  const a = normalize(input);
-  const b = normalize(eng);
-  if (a === b) return true;
-  // Accept partial match if it's one of the slash-separated options
-  const parts = eng.split(/[\/,]/).map(p => normalize(p.trim())).filter(p => p.length > 2);
-  return parts.some(p => a === p);
+function aCheckChi(input,chi){
+  return input.trim().replace(/\s/g,'')===chi.replace(/\s/g,'');
 }
-
-function isCorrectChi(input, chi) {
-  const a = input.trim().replace(/\s/g, '');
-  const b = chi.replace(/\s/g, '');
-  return a === b;
+function aUpdateStats(){
+  document.getElementById('a-learned').textContent=Object.values(aChecked).filter(Boolean).length;
 }
-
-function updateStats() {
-  document.getElementById('st-learned').textContent = Object.values(checked).filter(Boolean).length;
-}
-
-function grade() {
-  let ok = 0, no = 0;
-  document.querySelectorAll('.fill-input').forEach(inp => {
-    const val = inp.value.trim();
-    if (!val) { inp.classList.remove('correct','wrong'); return; }
-    const n = parseInt(inp.dataset.n);
-    const type = inp.dataset.type;
-    const row = DATA[n - 1];
-    let correct = false;
-    if (type === 'eng') correct = isCorrectEng(val, row[1]);
-    else correct = isCorrectChi(val, row[2]);
-    inp.classList.toggle('correct', correct);
-    inp.classList.toggle('wrong', !correct);
-    const hint = inp.parentElement.querySelector('.fill-answer');
-    if (hint) {
-      if (!correct) { hint.textContent = '正確答案：' + (type === 'eng' ? row[1] : row[2]); hint.classList.add('show'); }
-      else hint.classList.remove('show');
-    }
-    if (correct) ok++; else no++;
+function aGrade(){
+  let ok=0,no=0;
+  document.querySelectorAll('#a-list .fill-input-v').forEach(inp=>{
+    const val=inp.value.trim(); if(!val){ inp.classList.remove('correct','wrong'); return; }
+    const n=parseInt(inp.dataset.n), type=inp.dataset.type, row=VOCAB_DATA[n-1];
+    const correct = type==='eng' ? aCheckEng(val,row[1]) : aCheckChi(val,row[2]);
+    inp.classList.toggle('correct',correct); inp.classList.toggle('wrong',!correct);
+    const hint=inp.parentElement.querySelector('.fill-answer');
+    if(hint){ if(!correct){ hint.textContent='正確答案：'+(type==='eng'?row[1]:row[2]); hint.classList.add('show'); } else hint.classList.remove('show'); }
+    if(correct) ok++; else no++;
   });
-  document.getElementById('st-ok').textContent = ok;
-  document.getElementById('st-no').textContent = no;
+  document.getElementById('a-ok').textContent=ok;
+  document.getElementById('a-no').textContent=no;
 }
-
-function clearFills() {
-  document.querySelectorAll('.fill-input').forEach(i => {
-    i.value = ''; i.classList.remove('correct','wrong');
-  });
-  document.querySelectorAll('.fill-answer').forEach(h => h.classList.remove('show'));
-  fillValues = {};
-  document.getElementById('st-ok').textContent = 0;
-  document.getElementById('st-no').textContent = 0;
+function aClear(){
+  document.querySelectorAll('#a-list .fill-input-v').forEach(i=>{i.value='';i.classList.remove('correct','wrong');});
+  document.querySelectorAll('#a-list .fill-answer').forEach(h=>h.classList.remove('show'));
+  aFills={};
+  document.getElementById('a-ok').textContent=0;
+  document.getElementById('a-no').textContent=0;
 }
-
-function render() {
-  const list = document.getElementById('vocab-list');
-  const empty = document.getElementById('empty');
-  list.innerHTML = '';
-  const q = searchQ.toLowerCase();
-  let count = 0;
-
-  DATA.forEach(([n, eng, chi, stars]) => {
-    if (q && !eng.toLowerCase().includes(q) && !chi.includes(q)) return;
-    if (filter === 'learned' && !checked[n]) return;
-    if (filter === 'unlearned' && checked[n]) return;
-    if (filter === '5star' && stars !== '★★★★★') return;
+function aRender(){
+  const list=document.getElementById('a-list'), empty=document.getElementById('a-empty');
+  list.innerHTML='';
+  const q=aSearch.toLowerCase(); let count=0;
+  VOCAB_DATA.forEach(([n,eng,chi,stars])=>{
+    if(q&&!eng.toLowerCase().includes(q)&&!chi.includes(q)) return;
+    if(aFilter==='learned'&&!aChecked[n]) return;
+    if(aFilter==='unlearned'&&aChecked[n]) return;
+    if(aFilter==='5star'&&stars!=='★★★★★') return;
     count++;
-
-    const card = document.createElement('div');
-    card.className = 'vocab-card' + (checked[n] ? ' checked' : '') + (mode !== 'all' ? ' ' + mode : '');
-
+    const card=document.createElement('div');
+    card.className='vocab-card'+(aChecked[n]?' checked':'')+(aMode!=='all'?' '+aMode:'');
     // Main row
-    const main = document.createElement('div');
-    main.className = 'card-main';
-    main.innerHTML = `
-      <div class="card-num">${n}</div>
-      <div class="card-eng">${eng}</div>
-      <div class="card-chi">${chi}</div>
-      <div class="card-stars">${stars}</div>
-      <div class="card-cb"><input type="checkbox" ${checked[n] ? 'checked' : ''} data-n="${n}" /></div>
-    `;
-    main.querySelector('input').addEventListener('change', e => {
-      const num = parseInt(e.target.dataset.n);
-      checked[num] = e.target.checked;
-      card.classList.toggle('checked', e.target.checked);
-      saveChecked();
-      updateStats();
+    const main=document.createElement('div'); main.className='card-main';
+    main.innerHTML=`<div class="card-num">${n}</div><div class="card-eng">${eng}</div><div class="card-chi">${chi}</div><div class="card-stars">${stars}</div><div class="card-cb"><input type="checkbox" ${aChecked[n]?'checked':''} data-n="${n}"/></div>`;
+    main.querySelector('input').addEventListener('change',e=>{
+      const num=parseInt(e.target.dataset.n); aChecked[num]=e.target.checked;
+      card.classList.toggle('checked',e.target.checked); aSave(); aUpdateStats();
     });
     card.appendChild(main);
-
     // Fill row
-    const fillRow = document.createElement('div');
-    fillRow.className = 'fill-row';
-
-    if (mode === 'hide-eng' || mode === 'all') {
-      const fw = document.createElement('div');
-      fw.className = 'fill-wrap';
-      fw.innerHTML = `<span class="fill-label">填入英文</span>`;
-      const fi = document.createElement('input');
-      fi.type = 'text'; fi.className = 'fill-input';
-      fi.placeholder = 'Type in English...';
-      fi.dataset.n = n; fi.dataset.type = 'eng';
-      fi.value = fillValues[n + 'eng'] || '';
-      fi.addEventListener('input', e => { fillValues[n + 'eng'] = e.target.value; });
-      const ans = document.createElement('div');
-      ans.className = 'fill-answer';
-      fw.appendChild(fi); fw.appendChild(ans);
-      fillRow.appendChild(fw);
-    }
-
-    if (mode === 'hide-chi' || mode === 'all') {
-      const fw = document.createElement('div');
-      fw.className = 'fill-wrap';
-      fw.innerHTML = `<span class="fill-label">填入中文</span>`;
-      const fi = document.createElement('input');
-      fi.type = 'text'; fi.className = 'fill-input';
-      fi.placeholder = '輸入中文翻譯...';
-      fi.dataset.n = n; fi.dataset.type = 'chi';
-      fi.value = fillValues[n + 'chi'] || '';
-      fi.addEventListener('input', e => { fillValues[n + 'chi'] = e.target.value; });
-      const ans = document.createElement('div');
-      ans.className = 'fill-answer';
-      fw.appendChild(fi); fw.appendChild(ans);
-      fillRow.appendChild(fw);
-    }
-
+    const fillRow=document.createElement('div'); fillRow.className='fill-row';
+    const makeFill=(type,ph)=>{
+      const fw=document.createElement('div'); fw.className='fill-wrap-v';
+      fw.innerHTML=`<span class="fill-label">${type==='eng'?'填入英文':'填入中文'}</span>`;
+      const fi=document.createElement('input'); fi.type='text'; fi.className='fill-input-v';
+      fi.placeholder=ph; fi.dataset.n=n; fi.dataset.type=type;
+      fi.value=aFills[n+type]||'';
+      fi.addEventListener('input',e=>{ aFills[n+type]=e.target.value; });
+      const ans=document.createElement('div'); ans.className='fill-answer';
+      fw.appendChild(fi); fw.appendChild(ans); return fw;
+    };
+    if(aMode==='hide-eng'||aMode==='all') fillRow.appendChild(makeFill('eng','Type in English...'));
+    if(aMode==='hide-chi'||aMode==='all') fillRow.appendChild(makeFill('chi','輸入中文翻譯…'));
     card.appendChild(fillRow);
     list.appendChild(card);
   });
-
-  empty.style.display = count === 0 ? 'block' : 'none';
-  updateStats();
+  empty.style.display=count===0?'block':'none';
+  aUpdateStats();
 }
 
-// Event listeners
-document.getElementById('search').addEventListener('input', e => {
-  searchQ = e.target.value; render();
+document.getElementById('a-search').addEventListener('input',e=>{ aSearch=e.target.value; aRender(); });
+document.querySelectorAll('[data-amode]').forEach(btn=>btn.addEventListener('click',()=>{
+  aMode=btn.dataset.amode;
+  document.querySelectorAll('[data-amode]').forEach(b=>b.classList.remove('on-a'));
+  btn.classList.add('on-a'); aRender();
+}));
+document.querySelectorAll('[data-afilter]').forEach(btn=>btn.addEventListener('click',()=>{
+  aFilter=btn.dataset.afilter;
+  document.querySelectorAll('[data-afilter]').forEach(b=>b.classList.remove('on-a'));
+  btn.classList.add('on-a'); aRender();
+}));
+document.getElementById('a-grade').addEventListener('click',aGrade);
+document.getElementById('a-clear').addEventListener('click',aClear);
+document.getElementById('a-reset').addEventListener('click',()=>{
+  if(!confirm('確定重置所有勾選？')) return;
+  aChecked={}; aSave(); aRender();
 });
 
-document.querySelectorAll('[data-mode]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    mode = btn.dataset.mode;
-    document.querySelectorAll('[data-mode]').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    render();
+// ─────────────────────────────────────────────────────────────────
+// TAB B — SENTENCE DATA & LOGIC
+// ─────────────────────────────────────────────────────────────────
+const B_SECTIONS={1:'簡單的主謂賓結構',23:'主語＋及物動詞＋賓語＋賓語補足語',31:'主語＋及物動詞＋間接賓語＋直接賓語',32:'被動語態',46:'主語＋不及物動詞',55:'主系表結構',74:'it 作形式主語或形式賓語的句子',81:'there be 句型',83:'並列句',87:'狀語從句',90:'名詞性從句',94:'定語從句'};
+
+const SENT_DATA=[
+  [1,'經常做運動會提高人的自信',"Regular exercise can increase one's self-confidence","Frequently exercising can increase one's confidence",''],
+  [2,'教學質量對學生成績有很大的影響',"The quality of teaching can make huge difference to students' academic performance","Academic achievement is heavily dependent on the quality of teaching",''],
+  [3,'家長和老師應該努力去減少小孩子看電視的時間',"Parents and teachers should make an effort to limit children's screen time","Parents and teachers should make efforts to reduce the screen time of children",''],
+  [4,'經濟的下滑（economic slowdown）導致失業率的上升',"The economic slowdown has led to a climbing unemployment rate.","The economic slowdown has led to an increase in the unemployment rate",'increase 本身有名詞詞性'],
+  [5,'經濟的發展需要年輕的勞動者',"A country's economic development relies on a supply of young workers","Economic development requires young laborers",'labors 和 laborers 的區別：前者側重勞動的行為或勞動力總稱，後者專指從事勞動的人'],
+  [6,'工作量大的人沒有時間去休息',"People with a heavy workload do not have adequate time to rest","People with heavy workloads often don't have time to rest",'adequate adj. 足夠的，合格的。反義詞 inadequate'],
+  [7,'在中國很多學生都要上晚自習','A large number of students in China have to do self-study at night','Many students in China have to attend evening self-study sessions','self-study 自習'],
+  [8,'文化遺產（heritage sites）因為城市發展而受到威脅','The development of cities has posed a threat to heritage sites','Cultural heritage sites are threatened by urban development','pose a threat 構成威脅'],
+  [9,'我們不能忽視面對面的交流','We should not ignore face-to-face communication','We cannot ignore face-to-face communication','communication 作為交流、溝通時是不可數的'],
+  [10,'有些公共服務很難做到收支平衡','Some public services have problems in breaking even','Some public services are challenging to achieve a balance between revenue and expenses / Some public services find it challenging to break even','break even 收支平衡'],
+  [11,'我們需要考慮社會和經濟環境','We have to consider the social and economic context','We need to consider the social and economic environment',''],
+  [12,'密集種植對生物多樣性造成了威脅','Intensive farming can pose a threat to bio-diversity','Intensive cultivation poses a threat to biodiversity',''],
+  [13,'平等接受教育可以幫助解決學生學習成績不好的問題','Equal access to education can help tackle educational underachievement',"Equal access to education can help tackle the issue of students' academic underachievement",'help 後面的 to 是可以省略的。underachievement n. 低成就；學習成績不良'],
+  [14,'接觸不同的文化可以促進創新','Exposure to different cultures can encourage creativity','Exposure to different cultures can promote innovation','culture 多數情況下不可數，表示不同地方特定文化時才可數'],
+  [15,'政府應該重視社會福利（welfare services），尤其是醫療服務','The government should give priority to welfare services especially healthcare','The government should prioritize welfare services, especially healthcare',''],
+  [16,'教育或許決定了人的工作前景',"Education may hold the key to one's job prospects","Education might shape one's career prospects",'hold the key 掌控，支配。prospects 前景，前途'],
+  [17,'使用化石燃料會對環境造成破壞','The use of fossil fuels can cause damage to the environment','Using fossil fuels can cause environmental damage','fuel 表示一般燃料時不可數，不同種類時可數'],
+  [18,'建造住宅樓有助於解決城市的擁擠問題','Building apartment blocks helps (to) solve overcrowding in cities','Constructing residential buildings helps (to) alleviate urban congestion','alleviate v. 減輕；緩和；緩解'],
+  [19,'貧窮的人可以通過努力工作來提高其社會地位','People from disadvantaged backgrounds can improve their social status by working hard.','The impoverished can improve their social status through/via hard work',''],
+  [20,'因為全球化，人們需要和來自全球不同背景的人一起工作','Because of globalization, people need to work with those from diverse backgrounds','Due to globalization, people need to work with individuals from diverse backgrounds around the world',''],
+  [21,'我們需要採取措施去解決一些棘手的問題','We need to take action to solve some thorny problems','We need to take measures to address some challenging issues','thorny adj. 棘手的，麻煩的；多刺的，帶刺的。thorn n. 刺，荊棘'],
+  [22,'媒體通過誇大受害者的傷痛去吸引觀眾',"The media attracts public attention by sensationalizing victims' suffering","The media attracts viewers by exaggerating the pain of victims",''],
+  [23,'基因工程能讓人們培養新品種農作物','Genetic engineering allows people to nurture crop varieties','Genetic engineering allows people to cultivate new varieties of crops','nurture v./n. 培養，促進，懷、抱有/教育，培育'],
+  [24,'公司應該給有子女的女員工提供產假和其他幫助','Companies should provide working mothers with maternity leave and other forms of support','The company should provide maternity leave and other assistance for female employees with children','maternity leave 產假'],
+  [25,'不健康的生活方式讓人們處於生病的危險之中','An unhealthy lifestyle may put people at risk of illness','The unhealthy lifestyle puts people at risk of illness',''],
+  [26,'獎學金可以鼓勵更多的學生去學習研究生課程','Government grants could encourage more students to take postgraduate courses','Scholarships can encourage more students to pursue graduate-level/postgraduate studies',''],
+  [27,'社區改造為罪犯提供了獲得職業技能的機會','Community service provides offenders with opportunities to acquire transferable skills','The community redevelopment provides opportunities for criminals to acquire vocational skills',''],
+  [28,'法律應該將醉駕定為刑事犯罪','Legislation should make drink driving a criminal offense/offence','Laws should classify drunk driving as a criminal offense/offence','drink/drunk driving 都是合理表達，前者在英國常用後者在美國'],
+  [29,'鄉村地區給人們提供遠離現代生活的壓力和噪聲的機會','Rural areas provide people with opportunities to escape pressure and noises of modern life','Rural areas provide people with opportunities to escape pressure and noise of modern life','pressure 和 noise 都是可數又不可數'],
+  [30,'人口老齡化促使國家提高法定退休年齡（statutory retirement age）','The ageing population has prompted countries to raise statutory retirement age','The aging population is prompting the country to raise statutory retirement age','ageing 和 aging 兩種拼寫都可以'],
+  [31,'政府應該給一些城市提供資金去保護歷史建築（historic buildings）','Governments should offer some cities funds to preserve historic buildings','The government should provide funds to some cities to preserve historic buildings',''],
+  [32,'學校應該允許老師強制搗蛋的小孩離開教室','Teachers should be permitted to use force to remove the disruptive children from the classroom','The troublesome children should be allowed to remove from the classroom by the teachers',''],
+  [33,'農村的失業問題在某種程度上可以通過城鄉轉移（rural-to-urban shift）來解決','Unemployment in rural areas can be addressed partially by the rural-to-urban shift','The issue of unemployment in rural areas can be addressed to some extent through rural-to-urban shift','in rural areas 強調位置，of rural areas 強調屬性。address 強調處理過程，solve 強調徹底解決'],
+  [34,'高層建築有時候被認為是影響市容的東西（eyesore）','High-rise buildings are sometimes regarded as eyesores of the city','High-rise buildings are sometimes considered as eyesores that impact the cityscape','eyesore n. 不順眼的東西。consider 強調主觀個人看法，regard 強調正式客觀看法'],
+  [35,'太空科技的投資應該獲得政府的支持','The investment in space technology should be supported by the government','Space technology investments should be supported by the government','investment in 表示對某領域的投資，屬習慣用法'],
+  [36,'歷史文物因為其歷史重要性而被保存','Historic relics should be preserved for their historic significance','Historical artifacts are preserved due to their historical significance','historic 強調歷史重要性，historical 表示歷史有關的'],
+  [37,'學校活動的設置要讓孩子體會到成就感，提升他們的幸福感','Sports or other school activities can be designed to give children a sense of accomplishment and to promote their well-being','A sense of achievement and an enhanced sense of happiness should be experienced by children through the arrangement of school activities',''],
+  [38,'一些員工被鼓勵去打破陳規','Some employees are encouraged to break the mould','Some employees are encouraged to break conventions','break the mould/mold 打破常規'],
+  [39,'因為堵車，上下班的時間變得更長了','Commuting time has been prolonged because of traffic congestion','Due to traffic congestion, the commuting time has been extended','commuting time 通勤時間。prolong v. 延長，拖延'],
+  [40,'電腦技能可以運用到學習和工作中','Computer skills can be applied in their studies as well as their working lives','Computer skills can be applied to learning and work','apply 運用，介詞用 in。as well as 除…之外，也'],
+  [41,'大部分的環境破壞都可以歸咎於人類的活動','Most of environmental degradation is attributed to human activities.','Most environmental damage can be attributed to human activities.','environmental degradation 環境惡化。attribute sth. to sth. 把…歸因於'],
+  [42,'許多孩子每天接觸暴力內容','Many children are exposed to violent content every day','Many children are exposed to violent content on a daily basis','expose sb. to sth. 使…暴露於。everyday adj. 日常的 ≠ every day'],
+  [43,'家庭環境被認為是小孩成長最重要的影響因素','The family environment is widely thought/believed to be the most important influence on children\'s development','The family environment is considered the most crucial influencing factor in child\'s upbringing','upbringing n. 撫養，養育；教育，教養'],
+  [44,'隨著越來越多的年輕人參加志願者工作，社區的凝聚力（cohesion）會加強','With an increasing number of young people participating in volunteer work, community cohesion will be enhanced','As more and more young people engage in volunteer work, the cohesion of the community will be strengthened',''],
+  [45,'移民有時候被認為是對社會團結的一個威脅','Immigrants are sometimes recognized as a threat to social cohesion','Immigration is sometimes considered as a thread to social cohesion','社會團結：social cohesion'],
+  [46,'沒有受過高等教育的年輕人只能找到低技術含量的工作','Young people without tertiary education qualifications normally end up working in low-skilled jobs','Young people without higher education are limited to jobs with low skill requirements','tertiary adj. 第三的；高等教育的 ~ education'],
+  [47,'一些人不支持轉基因食品','Some people disapprove of genetically modified food','Some people do not support genetically modified (GM) foods','disapprove 是不及物動詞，通常用 disapprove of sth。GM = genetically modified'],
+  [48,'旅遊景點竭力滿足遊客的需要和品味',"Tourist spots endeavor to cater for tourists' needs and tastes",'Tourist attractions strive to meet the needs and tastes of visitors','景點：tourist spots/attractions。endeavor v. 努力，力圖；cater for 迎合，滿足'],
+  [49,'在競爭激烈的社會，有工作的成年人往往關注職業發展','In a highly competitive society, working adults usually focus on career advancement','In a competitive society, working adults often focus on career development','advancement n. 發展，提高，改善'],
+  [50,'審美觀是因為文化而異的','Perception of beauty differs from culture to culture','Aesthetic perspectives vary with cultural differences','perception n. 認識，觀念，看法；感知。from culture to culture 因文化而異'],
+  [51,'因為費用的下降，航空業最近幾十年發展的很快','Because of low-cost carries, the aviation industry has developed at an astounding pace over the past decades','Due to the decrease in costs, the aviation industry has developed rapidly in recent decades','astounding adj. 令人震驚的。pace n. 速度；節奏'],
+  [52,'動物實驗有時候檢驗不出藥物的副作用','Animal experiments sometimes fail to detect the undesirable side effects of drugs','At times, the use of animal experiments does not reveal the adverse effects of medications','adverse adj. 不利的；負面的；有害的'],
+  [53,'非法捕殺導致某些動物的滅亡','Some animals have died out because of illegal hunting','Illegal hunting results in the extinction of certain animals','die out 逐漸消失；滅絕'],
+  [54,'電腦對人類交流技能的影響隨著年齡而變化','The impact of computers on communication skills varies across ages','The impact of computers on human communication skills varies with age','across 是介詞，表示橫跨某個區域；vary with 隨…而變化'],
+  [55,'很多女孩都不願意在男人居多的行業裡（male-dominated world）找工作','Many girls are not willing to seek employment in a male-dominated world','Many girls are unwilling to seek employment in male-dominated industries',''],
+  [56,'學校的主要功能是給下一代傳授知識（impart knowledge）','The main function of schools is to impart knowledge to the next generation','The primary function of schools is to impart knowledge to the next generation','school 是可數的所以要加複數或者冠詞'],
+  [57,'藝術不屬於學校的主科','The arts are not among core subject areas at school','Art is not considered/regarded as a core subject in schools',''],
+  [58,'因為經濟前景（economic outlook）不夠明朗，很多公司不太可能招聘新的職員','Because of the uncertainty about the economic outlook, many companies are unlikely to recruit new employees','Due to the unclear economic outlook, many companies are less likely to hire new employees',''],
+  [59,'空運可能產生很多溫室氣體','Air freight is likely to create enormous greenhouse gases','Air transport may generate a significant amount of greenhouse gases','freight n. 貨物、貨運；運費'],
+  [60,'孩子很可能有行為問題','Some children are likely to have behavioral/behavioural problems','The child is likely to have behavioral issues','behavioral/behavioural 寫法是等價的'],
+  [61,'人口大量擴張是大量垃圾產生的原因','The rapid population expansion is the main reason for the huge accumulation of waste','The substantial expansion of population is a cause of the significant increase in waste production','substantial adj. 大的；可觀的；重大的'],
+  [62,'嚴厲的懲罰是減少犯罪率的有效手段','Imposing stiff punishment is an effective method to reduce crime','Harsh punishment is an effective means of reducing crime rates','impose v. 推行；強制實施；強加於'],
+  [63,'我們的環境還是很糟糕','Our environment is still in a dire state','Our environment is still quite poor','dire adj. 嚴重的；危急的；極端的；很壞的'],
+  [64,'因為失業率高漲，大學生迫於壓力而努力學習','Undergraduates feel under increasing pressure to study hard, because of the soaring unemployment rate','Due to the soaring unemployment rate, college students strive to study under pressure','soaring adj. 高漲的。feel 也是系動詞。strive vi. 努力，奮鬥，力爭'],
+  [65,'種族歧視依然非常嚴重','Racial discrimination remains a serious problem','Racial discrimination remains very severe','remain 系動詞'],
+  [66,'死記乘法表並不是提高算數能力的最好方式','Learning the times table by rote is not the best way to improve numeracy','Rote memorization of the multiplication table is not the effective way to enhance arithmetic skills','learning sth. by rote 死記硬背地學。numeracy n. 基本計算能力，識數'],
+  [67,'貧窮國家的首要任務是滿足人們的基本生存需求',"The top priority for deprived countries is to satisfy citizens' basic needs",'The primary task of impoverished nations is to meet the basic survival needs of their people','deprived adj. 短缺的，匱乏的；貧寒的。impoverished adj. 赤貧的'],
+  [68,'轉基因食品對健康的影響仍然未知','The health effect of GE food remains unclear/yet to be known','The impact of genetically modified food on health remains uncertain','GE = genetically engineered，和 GM 一個意思'],
+  [69,'網絡購物已經成為很多人日常生活中很普通的一部分','Online shopping has become a normal part of people\'s everyday life.','Online shopping has become a commonplace aspect of many people\'s daily lives','become/became/become。commonplace adj. 平常的，普通的。life 的複數形式 lives'],
+  [70,'在消費社會裡，人們不再滿足於生活必需品（bare necessities）','In the consumer society, bare necessities are not able to satisfy people\'s needs','In consumer society, people are no longer satisfied with just the bare necessities of life','the bare necessities 生活必需品'],
+  [71,'人們不健康的生活方式是他們傾向於依賴科技的結果','People\'s unhealthy lifestyle is the result of their tendency to rely heavily on technology','Unhealthy lifestyles among people are a result of their tendency to rely on technology','tendency n. 傾向；趨勢'],
+  [72,'貧窮是社區犯罪增多的原因','Poverty is the reason of the crime wave in many communities','Poverty is a contributing factor of the increase in community crime','crime wave n. 犯罪率激增'],
+  [73,'電動汽車的發明是我們為維護環境所做的一部分努力','The invention of electric vehicles is a part of our effort to sustain the environment','The invention of electric cars is part of our efforts to preserve the environment',''],
+  [74,'送貴重的禮物（lavish gifts）是中國人的習慣','It is very common for Chinese people to exchange lavish gifts','It is a Chinese custom to give lavish gifts',''],
+  [75,'未來幾十年，我們很難保護植物多樣性','We will find it difficult to preserve biodiversity in the coming decades','In the coming decades, it will be challenging to preserve plant biodiversity','biodiversity n. 生物多樣性'],
+  [76,'隨著年齡的增長，人們很難和家人、朋友保持聯繫','With age, people find it difficult to maintain contact with family and friends','As people grow older, it becomes difficult to stay in touch with family and friends','年齡增長：with age / grow older'],
+  [77,'免費上大學使得家境不好的學生有同等上學的機會','Free university education makes it possible for students from less well-off backgrounds to have equal access to tertiary education','Free university education provides equal opportunities for students from disadvantaged backgrounds to attend college','well off adj. 富有的'],
+  [78,'很多人覺得有必要趕時髦','Many people consider it necessary to follow fashion','Many people feel it necessary to keep up trends',''],
+  [79,'經費削減讓很多年輕人很難接受大學教育','Budget cuts make it difficult for many young people to receive a college education','Budget cuts make it difficult for many young people to afford a college education','經費、預算削減 budget cuts'],
+  [80,'有時候，很難去評估人類行為造成的環境代價','Sometimes, it is difficult to evaluate the environmental cost of human activities','Sometimes, it is difficult to assess the environmental costs of human behavior','behavior 不可數'],
+  [81,'在大城市有一些貧困的社區','There are some economically deprived communities in large cities','There are some impoverished communities in big cities','economically deprived 經濟貧困'],
+  [82,'按照能力分班和學生的成績沒有明顯的聯繫','There is no clear link between grouping students by ability and their levels of attainments','There is no clear correlation between ability-based grouping and students\' grades','attainment n. 成就，造詣。correlation n. 相互聯繫；相關'],
+  [83,'使用多媒體可以提升學生的注意力，讓他們對課程保持興趣','Using multimedia tools can improve students\'s concentration and keep them interested','Using multimedia can enhance students\' attention and keep them interested in the course',''],
+  [84,'名人的成就鼓勵年輕人努力學習，堅韌不拔','The achievement of celebrities can motivate young people to study hard and show perseverance','The achievements of celebrities inspire young people to study hard and persevere','perseverance n. 不屈不撓，堅持不懈'],
+  [85,'在發展中國家開設新的分公司可以降低生產成本，產生巨大的利潤','Opening new branches in developing countries can reduce the cost of production and generate huge profits','Opening new branches in developing countries can reduce production costs and generate significant profits','in developing countries 是固定詞組而不是 in the ~'],
+  [86,'生活方式的輕微變化能夠產生巨大的不同，並且可以減少我們的日常活動對環境的影響','Small lifestyle changes can make a huge difference and reduce the environmental impact of our daily activities','Slight changes in lifestyle can make a huge difference and reduce the impact of our daily activities on the environment',''],
+  [87,'因為沒有實習機會，對學生來說提升工作技能是很難的','It is difficult for students to improve practical skills if school do not provide work placements','Without internship opportunities, it is difficult for students to enhance their job skills','work placement n. 工作實習。internship n. 實習期'],
+  [88,'即使獲得了文憑，大學生也沒辦法賺到很多錢','University students cannot make a decent living even though they have gained qualifications','Even with a diploma, college students may not be able to earn a lot of money',''],
+  [89,'因為激烈的競爭和技術的迅速發展，現在經營一家公司是一個艱巨的任務','Running an organization in today\'s world can be a daunting task because competition is stiff and technology is developing rapidly','Running a company is a daunting task in today\'s world, due to fierce competition and rapid technological advancement','daunting adj. 令人發怵的；使人氣餒的。advancement n. 發展，提高，改善'],
+  [90,'事實是，因為機械化的原因，一些工作已經被砍掉','The fact is that some jobs have been made redundant because of mechanization','The fact is that some jobs have been eliminated due to mechanization','redundant adj. 多餘的；失業的，被裁減的。mechanization n. 機械化'],
+  [91,'現在很多人選擇變得環保並減少能源的使用，事實確實如此','It is true that many people today have chosen to go green and reduce cut down on the use of energy','It is true that many people are now choosing to be environmentally friendly and reduce their energy consumption',''],
+  [92,'判刑會對年輕人產生傷害，因為犯罪記錄會給他們的職業生涯留下陰影','A prison sentence can be damaging to young people due to the fact that the criminal record can cast a long shadow on their career','A criminal conviction can have a harmful impact on a young person\'s life, as it can leave a criminal record that can follow them throughout their career','cast v. 投射（光或陰影）。conviction n. 定罪，判罪'],
+  [93,'我相信快餐廣告和普遍肥胖有直接關係','I believe that there is a direct link between fast food advertisements and rising levels of obesity','I believe that there is a direct relationship between fast food advertising and obesity','obesity n. 肥胖'],
+  [94,'將政府的資金用於污染清理工作可以創造一個舒適的環境','Money can be used for clean-up operation which can help create a pleasant environment','Directing government funding towards pollution cleanup efforts can create a more livable environment',''],
+  [95,'有些廣告鼓勵消費者買一些自己不需要的東西，應該對其加強管制','It is necessary to put/impose restrictions on those advertisements which encourage people to buy more than they need','Some advertisements, which encourage consumers to buy things they don\'t need, should be subject to stricter regulation','be subject to something 有；遭受；承受'],
+  [96,'植樹造林有助於提高空氣質量，從而降低一些疾病的風險，比如呼吸道疾病','Afforestation can help to improve air quality, which can reduce the risk of suffering health problems such as respiratory diseases','Afforestation helps improve air quality, thereby reducing the risk of certain diseases, such as respiratory illnesses','afforestation n. 造林。respiratory adj. 呼吸的'],
+  [97,'政府應該控制這些誇張報道社會問題的新聞','Authorities should censor those news reports which give an exaggerated account of some social problems','The government should control the news that exaggerates social issues','exaggerate v. 誇張，誇大，對...言過其實'],
+  [98,'這就是如今的文員經常有健康問題的原因','It is the reason why clerical workers today suffer health problems','This is why clerical workers often experience health issues nowadays','clerical adj. 辦公室、文書工作的；牧師的'],
+  [99,'許多員工願意去那些可以獲得晉升機會的公司裡工作','Many employees are willing to work for companies where they can obtain promotional opportunities','Many employees are willing to work in companies where they can get opportunities for promotion',''],
+  [100,'許多年輕人選擇在說英語的國家學習，在那裡，他們可以在世界著名的大學學習','Many young people have chosen to study in English-speaking countries, where they can study at some world famous universities','Many young people choose to study in English-speaking countries where they can attend world-renowned universities','world-renowned adj. 世界知名的'],
+];
+
+let bChecked={}, bFills={}, bMode='read', bFilter='all', bSearch='', bShowNotes=false;
+try{ const s=localStorage.getItem('gu100_ck'); if(s) bChecked=JSON.parse(s); }catch(e){}
+function bSave(){ try{ localStorage.setItem('gu100_ck',JSON.stringify(bChecked)); }catch(e){} }
+
+function bNorm(s){ return s.toLowerCase().replace(/\(to\)/gi,'').replace(/\s+/g,' ').replace(/[.,!?;:]/g,'').trim(); }
+function bGradeAnswer(input,ref){
+  if(!input.trim()) return null;
+  const a=bNorm(input),b=bNorm(ref);
+  if(a===b) return true;
+  const parts=ref.split(/\s*[\/—–]\s*/).map(p=>bNorm(p)).filter(p=>p.length>4);
+  if(parts.some(p=>a===p||(a.length>=p.length*0.78&&p.includes(a)))) return true;
+  return false;
+}
+function bUpdateStats(){
+  document.getElementById('b-done').textContent=Object.values(bChecked).filter(Boolean).length;
+}
+function bGrade(){
+  let ok=0,no=0;
+  document.querySelectorAll('#b-list .fill-input-s').forEach(inp=>{
+    const val=inp.value.trim(); if(!val){ inp.classList.remove('ok','no'); return; }
+    const n=parseInt(inp.dataset.n), which=inp.dataset.which, row=SENT_DATA[n-1];
+    const ref=which==='a'?row[2]:row[3];
+    const res=bGradeAnswer(val,ref);
+    inp.classList.toggle('ok',res===true); inp.classList.toggle('no',res===false);
+    const hint=inp.closest('.fill-wrap-s')?.querySelector('.fill-hint-s');
+    if(hint){ if(res===false){ hint.textContent='參考答案：'+ref; hint.classList.add('show'); } else hint.classList.remove('show'); }
+    if(res===true) ok++; else if(res===false) no++;
   });
-});
+  document.getElementById('b-ok').textContent=ok;
+  document.getElementById('b-no').textContent=no;
+}
+function bClear(){
+  document.querySelectorAll('#b-list .fill-input-s').forEach(i=>{i.value='';i.classList.remove('ok','no');});
+  document.querySelectorAll('#b-list .fill-hint-s').forEach(h=>h.classList.remove('show'));
+  bFills={}; document.getElementById('b-ok').textContent=0; document.getElementById('b-no').textContent=0;
+}
 
-document.querySelectorAll('[data-filter]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    filter = btn.dataset.filter;
-    document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    render();
+function bMakeBlock(n,row,which,showRef,showFill){
+  const ref=which==='a'?row[2]:row[3];
+  const labelText=which==='a'?'答案 A':'答案 B';
+  const block=document.createElement('div'); block.className='ans-block';
+  const lbl=document.createElement('div'); lbl.className='ans-label '+(which==='a'?'la':'lb'); lbl.textContent=labelText; block.appendChild(lbl);
+  const refEl=document.createElement('div'); refEl.className='ans-ref'+(showRef?'':' hidden'); refEl.textContent=ref; block.appendChild(refEl);
+  if(!showRef){
+    const rv=document.createElement('button'); rv.className='reveal-btn'; rv.textContent='顯示答案';
+    rv.addEventListener('click',()=>{ refEl.classList.remove('hidden'); rv.style.display='none'; });
+    block.appendChild(rv);
+  }
+  if(showFill){
+    const fw=document.createElement('div'); fw.className='fill-wrap-s';
+    const fi=document.createElement('input'); fi.type='text'; fi.className='fill-input-s';
+    fi.placeholder='輸入'+labelText+'…'; fi.dataset.n=n; fi.dataset.which=which;
+    fi.value=bFills[`${n}${which}`]||'';
+    fi.addEventListener('input',e=>{ bFills[`${n}${which}`]=e.target.value; });
+    const fh=document.createElement('div'); fh.className='fill-hint-s';
+    fw.appendChild(fi); fw.appendChild(fh); block.appendChild(fw);
+  }
+  return block;
+}
+
+function bRender(){
+  const list=document.getElementById('b-list'), empty=document.getElementById('b-empty');
+  const mb=document.getElementById('b-modebar');
+  list.innerHTML='';
+  const hints={'read':'📖 閱讀模式：中英文都顯示，無需填空','blank':'✏️ 填空模式：答案A和B都已隱藏，填入翻譯後點「批改」','show-a':'👁 顯示A，填空B：答案A可參考，請填入答案B','show-b':'👁 顯示B，填空A：答案B可參考，請填入答案A'};
+  mb.textContent=hints[bMode];
+  const q=bSearch.toLowerCase(); let count=0;
+  SENT_DATA.forEach(row=>{
+    const [n,zh,ansA,ansB,note]=row;
+    if(q&&!zh.toLowerCase().includes(q)&&!ansA.toLowerCase().includes(q)&&!ansB.toLowerCase().includes(q)) return;
+    if(bFilter==='done'&&!bChecked[n]) return;
+    if(bFilter==='undone'&&bChecked[n]) return;
+    count++;
+    if(B_SECTIONS[n]){ const sec=document.createElement('div'); sec.className='section-div'; sec.textContent=B_SECTIONS[n]; list.appendChild(sec); }
+    const card=document.createElement('div'); card.className='sent-card'+(bChecked[n]?' done':'');
+    const top=document.createElement('div'); top.className='card-top';
+    const numEl=document.createElement('div'); numEl.className='card-num'; numEl.textContent=n;
+    const body=document.createElement('div'); body.className='card-body';
+    const zhEl=document.createElement('div'); zhEl.className='card-zh'; zhEl.textContent=zh; body.appendChild(zhEl);
+    if(note){ const noteEl=document.createElement('div'); noteEl.className='card-note'+(bShowNotes?' show':''); noteEl.textContent='📌 '+note; body.appendChild(noteEl); }
+    const cbWrap=document.createElement('div'); cbWrap.className='card-cb2';
+    const cb=document.createElement('input'); cb.type='checkbox'; cb.checked=!!bChecked[n];
+    cb.addEventListener('change',e=>{ bChecked[n]=e.target.checked; card.classList.toggle('done',e.target.checked); bSave(); bUpdateStats(); });
+    cbWrap.appendChild(cb); top.appendChild(numEl); top.appendChild(body); top.appendChild(cbWrap); card.appendChild(top);
+    const aa=document.createElement('div'); aa.className='ans-area';
+    if(bMode==='read'){ aa.appendChild(bMakeBlock(n,row,'a',true,false)); if(ansB) aa.appendChild(bMakeBlock(n,row,'b',true,false)); }
+    else if(bMode==='blank'){ aa.appendChild(bMakeBlock(n,row,'a',false,true)); if(ansB) aa.appendChild(bMakeBlock(n,row,'b',false,true)); }
+    else if(bMode==='show-a'){ aa.appendChild(bMakeBlock(n,row,'a',true,false)); if(ansB) aa.appendChild(bMakeBlock(n,row,'b',false,true)); }
+    else if(bMode==='show-b'){ if(ansB) aa.appendChild(bMakeBlock(n,row,'b',true,false)); aa.appendChild(bMakeBlock(n,row,'a',false,true)); }
+    card.appendChild(aa); list.appendChild(card);
   });
+  empty.style.display=count===0?'block':'none';
+  bUpdateStats();
+}
+
+document.getElementById('b-search').addEventListener('input',e=>{ bSearch=e.target.value; bRender(); });
+document.querySelectorAll('[data-bmode]').forEach(btn=>btn.addEventListener('click',()=>{
+  bMode=btn.dataset.bmode;
+  document.querySelectorAll('[data-bmode]').forEach(b=>b.classList.remove('on-b'));
+  btn.classList.add('on-b'); bRender();
+}));
+document.querySelectorAll('[data-bfilter]').forEach(btn=>btn.addEventListener('click',()=>{
+  bFilter=btn.dataset.bfilter;
+  document.querySelectorAll('[data-bfilter]').forEach(b=>b.classList.remove('on-b'));
+  btn.classList.add('on-b'); bRender();
+}));
+document.getElementById('b-grade').addEventListener('click',bGrade);
+document.getElementById('b-clear').addEventListener('click',bClear);
+document.getElementById('b-reset').addEventListener('click',()=>{
+  if(!confirm('確定重置所有勾選？')) return;
+  bChecked={}; bSave(); bRender();
+});
+const noteBtn=document.getElementById('b-note');
+noteBtn.addEventListener('click',()=>{
+  bShowNotes=!bShowNotes;
+  noteBtn.classList.toggle('note-on',bShowNotes);
+  noteBtn.textContent=bShowNotes?'📌 筆記 ON':'📌 筆記';
+  document.querySelectorAll('#b-list .card-note').forEach(n=>n.classList.toggle('show',bShowNotes));
 });
 
-document.getElementById('btn-grade').addEventListener('click', grade);
-document.getElementById('btn-clear').addEventListener('click', clearFills);
-document.getElementById('btn-reset').addEventListener('click', () => {
-  if (!confirm('確定要清除所有勾選紀錄嗎？')) return;
-  checked = {}; saveChecked(); render();
-});
-
-render();
+// ── Init both tabs ──
+aRender();
+bRender();
 </script>
 </body>
 </html>
