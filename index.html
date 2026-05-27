@@ -37,6 +37,15 @@
   --vb-blue:#1a4d7a;
   --vb-blue-bg:#eaf2fb;
   --vb-section:#ede9e0;
+  /* Tab C — Intro Patterns (teal) */
+  --vc:#0d6577;
+  --vc-light:#e4f4f8;
+  --vc-mid:#1a9ab8;
+  --vc-amber:#7a4f10;
+  --vc-amber-bg:#fdf5e6;
+  --vc-section:#e4eef0;
+  --vc-pattern:#1a6d80;
+  --vc-pattern-bg:#dff0f5;
 }
 body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.65}
 
@@ -50,6 +59,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 .tab-btn:hover{color:var(--text);background:var(--bg)}
 .tab-btn.active-a{color:var(--va);border-bottom-color:var(--va)}
 .tab-btn.active-b{color:var(--vb);border-bottom-color:var(--vb)}
+.tab-btn.active-c{color:var(--vc);border-bottom-color:var(--vc)}
 
 /* ── Tab panels ── */
 .panel{display:none}
@@ -59,6 +69,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 .hd{color:#fff;padding:.85rem 1.25rem .75rem;position:sticky;top:57px;z-index:200}
 .hd-a{background:var(--va);box-shadow:0 2px 14px rgba(74,63,143,.2)}
 .hd-b{background:var(--vb);box-shadow:0 2px 14px rgba(45,80,22,.2)}
+.hd-c{background:var(--vc);box-shadow:0 2px 14px rgba(13,101,119,.2)}
 .hd-inner{max-width:900px;margin:0 auto}
 .hd-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:.4rem}
 .hd h1{font-family:'Noto Serif TC',serif;font-size:15px;font-weight:600;flex:1}
@@ -81,9 +92,12 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 .btn.pa:hover{background:#3b3174}
 .btn.pb{background:var(--vb);color:#fff;border-color:var(--vb);font-weight:500}
 .btn.pb:hover{background:#234010}
+.btn.pc{background:var(--vc);color:#fff;border-color:var(--vc);font-weight:500}
+.btn.pc:hover{background:#0a4d5c}
 .btn.danger{color:var(--red);border-color:var(--red)}
 .btn.danger:hover{background:var(--red-bg)}
 .btn.note-on{background:var(--vb-gold-bg);border-color:var(--vb-gold);color:var(--vb-gold);font-weight:500}
+.btn.pat-on{background:var(--vc-pattern-bg);border-color:var(--vc-pattern);color:var(--vc-pattern);font-weight:500}
 
 /* ── Pill bars ── */
 .pill-bar{display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-bottom:.55rem}
@@ -92,6 +106,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 .pill:hover{border-color:var(--border2);color:var(--text)}
 .pill.on-a{background:var(--va-light);border-color:var(--va-mid);color:var(--va);font-weight:500}
 .pill.on-b{background:var(--vb-light);border-color:var(--vb-mid);color:var(--vb);font-weight:500}
+.pill.on-c{background:var(--vc-light);border-color:var(--vc-mid);color:var(--vc);font-weight:500}
 
 /* ── Mode hint bar ── */
 .mode-bar{background:var(--surface);border:.5px solid var(--border);border-radius:var(--rs);padding:6px 12px;margin-bottom:.7rem;font-size:12px;color:var(--muted)}
@@ -153,6 +168,36 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 .reveal-btn{align-self:flex-start;font-size:11px;padding:3px 10px;border:.5px solid var(--border);border-radius:20px;background:transparent;color:var(--muted);cursor:pointer;font-family:inherit;transition:all .12s;margin-top:2px}
 .reveal-btn:hover{background:var(--vb-section);color:var(--text)}
 
+/* ═══════════════════════════════════════════
+   TAB C — INTRO PATTERN TRANSLATION
+═══════════════════════════════════════════ */
+.c-section-div{background:var(--vc-section);border-radius:var(--rs);padding:8px 14px;margin:1rem 0 .5rem;font-size:11.5px;font-weight:700;color:var(--vc-pattern);letter-spacing:.04em;display:flex;flex-direction:column;gap:4px}
+.c-section-title{display:flex;align-items:center;gap:7px}
+.c-section-title::before{content:'';display:inline-block;width:3px;height:13px;background:var(--vc-pattern);border-radius:2px;flex-shrink:0}
+.c-section-pattern{font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:400;color:var(--vc);opacity:.75;padding-left:10px}
+.intro-card{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);margin-bottom:10px;overflow:hidden}
+.intro-card:hover{box-shadow:0 2px 14px rgba(0,0,0,.07)}
+.intro-card.done{border-left:3px solid var(--green)}
+.intro-top{display:grid;grid-template-columns:28px 1fr 32px;gap:8px;align-items:start;padding:12px 14px 8px}
+.intro-body{display:flex;flex-direction:column;gap:5px}
+.intro-zh{font-family:'Noto Serif TC',serif;font-size:15px;line-height:1.55}
+.intro-pattern-tag{font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--vc-pattern);background:var(--vc-pattern-bg);border:.5px solid var(--vc-mid);border-radius:4px;padding:2px 8px;display:none;align-self:flex-start;line-height:1.5;margin-top:1px}
+.intro-pattern-tag.show{display:inline-block}
+.intro-cb{display:flex;justify-content:center;align-items:flex-start;padding-top:3px}
+.intro-cb input{width:16px;height:16px;cursor:pointer;accent-color:var(--green)}
+.intro-ans-area{padding:0 14px 12px 50px;display:flex;flex-direction:column;gap:8px}
+.intro-ans-ref{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);line-height:1.6;padding:2px 0}
+.intro-ans-ref.hidden{opacity:0;user-select:none;pointer-events:none;height:0;overflow:hidden;padding:0}
+.intro-fill-wrap{display:flex;flex-direction:column;gap:3px}
+.intro-fill-input{padding:7px 11px;border:.5px solid var(--border2);border-radius:var(--rs);background:var(--surface2);color:var(--text);font-size:13px;font-family:'JetBrains Mono',monospace;outline:none;transition:border-color .15s,background .15s;width:100%}
+.intro-fill-input:focus{border-color:var(--vc-mid);background:var(--surface)}
+.intro-fill-input.ok{border-color:var(--green);background:var(--green-bg)}
+.intro-fill-input.no{border-color:var(--red);background:var(--red-bg)}
+.intro-fill-hint{font-size:11px;color:var(--red);display:none;line-height:1.5;padding-left:2px}
+.intro-fill-hint.show{display:block}
+.intro-reveal-btn{align-self:flex-start;font-size:11px;padding:3px 10px;border:.5px solid var(--border);border-radius:20px;background:transparent;color:var(--muted);cursor:pointer;font-family:inherit;transition:all .12s;margin-top:2px}
+.intro-reveal-btn:hover{background:var(--vc-section);color:var(--text)}
+
 /* ── Empty ── */
 .empty{text-align:center;padding:3rem 1rem;color:var(--hint);font-size:14px}
 </style>
@@ -171,6 +216,11 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
       <span class="tab-icon">✍️</span>
       <span class="tab-label">翻譯練習</span>
       <span class="tab-sub">顧家北100句</span>
+    </button>
+    <button class="tab-btn" id="tab-c-btn" onclick="switchTab('c')">
+      <span class="tab-icon">🔑</span>
+      <span class="tab-label">引言句型</span>
+      <span class="tab-sub">中翻英練習</span>
     </button>
   </div>
 </nav>
@@ -276,6 +326,45 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════
+     PANEL C — INTRO PATTERN TRANSLATION
+══════════════════════════════════════════ -->
+<div class="panel" id="panel-c">
+
+  <header class="hd hd-c">
+    <div class="hd-inner">
+      <div class="hd-top">
+        <h1>雅思引言句型：中翻英練習</h1>
+        <span class="hd-sub">開頭段落句型訓練</span>
+      </div>
+      <div class="hd-stats">
+        <div class="hd-chip">已完成 <strong id="c-done">0</strong>/10</div>
+        <div class="hd-chip">批改正確 <strong id="c-ok">0</strong></div>
+        <div class="hd-chip">批改錯誤 <strong id="c-no">0</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="ctrl-bar">
+      <button class="btn pc" id="c-grade">✓ 批改</button>
+      <button class="btn" id="c-clear">清除</button>
+      <button class="btn danger" id="c-reset">重置勾選</button>
+      <button class="btn" id="c-pattern">💡 句型提示</button>
+    </div>
+
+    <div class="pill-bar">
+      <span class="pill-lbl">模式：</span>
+      <button class="pill on-c" data-cmode="read">📖 閱讀</button>
+      <button class="pill" data-cmode="blank">✏️ 填空</button>
+    </div>
+
+    <div id="c-modebar" class="mode-bar"></div>
+    <div id="c-list"></div>
+    <div id="c-empty" class="empty" style="display:none">沒有符合條件的句子</div>
+  </div>
+</div>
+
 <script>
 // ─────────────────────────────────────────────────────────────────
 // TAB SWITCHING
@@ -285,14 +374,16 @@ function switchTab(t){
   currentTab = t;
   document.getElementById('panel-a').classList.toggle('active', t==='a');
   document.getElementById('panel-b').classList.toggle('active', t==='b');
+  document.getElementById('panel-c').classList.toggle('active', t==='c');
   document.getElementById('tab-a-btn').className = 'tab-btn' + (t==='a' ? ' active-a' : '');
   document.getElementById('tab-b-btn').className = 'tab-btn' + (t==='b' ? ' active-b' : '');
-  // save tab preference
+  document.getElementById('tab-c-btn').className = 'tab-btn' + (t==='c' ? ' active-c' : '');
   try{ localStorage.setItem('ielts_tab', t); }catch(e){}
 }
 try{
   const saved = localStorage.getItem('ielts_tab');
   if(saved === 'b') switchTab('b');
+  else if(saved === 'c') switchTab('c');
 }catch(e){}
 
 // ─────────────────────────────────────────────────────────────────
@@ -452,7 +543,6 @@ function aRender(){
     count++;
     const card=document.createElement('div');
     card.className='vocab-card'+(aChecked[n]?' checked':'')+(aMode!=='all'?' '+aMode:'');
-    // Main row
     const main=document.createElement('div'); main.className='card-main';
     main.innerHTML=`<div class="card-num">${n}</div><div class="card-eng">${eng}</div><div class="card-chi">${chi}</div><div class="card-stars">${stars}</div><div class="card-cb"><input type="checkbox" ${aChecked[n]?'checked':''} data-n="${n}"/></div>`;
     main.querySelector('input').addEventListener('change',e=>{
@@ -460,7 +550,6 @@ function aRender(){
       card.classList.toggle('checked',e.target.checked); aSave(); aUpdateStats();
     });
     card.appendChild(main);
-    // Fill row
     const fillRow=document.createElement('div'); fillRow.className='fill-row';
     const makeFill=(type,ph)=>{
       const fw=document.createElement('div'); fw.className='fill-wrap-v';
@@ -727,9 +816,216 @@ noteBtn.addEventListener('click',()=>{
   document.querySelectorAll('#b-list .card-note').forEach(n=>n.classList.toggle('show',bShowNotes));
 });
 
-// ── Init both tabs ──
+// ─────────────────────────────────────────────────────────────────
+// TAB C — INTRO PATTERN DATA & LOGIC
+// ─────────────────────────────────────────────────────────────────
+// [id, zh, eng, patternHint]
+const C_DATA = [
+  [1,  '關於開車造成的負面影響，人們長期以來一直存在爭議。',
+       'There has long been controversy about the negative effect of travelling by car.',
+       'There has long been controversy about...'],
+  [2,  '去不同地方旅遊，一直是人們假期中的休閒活動。',
+       'Travelling to different places has long been a leisure activity on vacation.',
+       '...has long been...'],
+  [3,  '最近，一些社會出現了傳統價值逐漸流失的現象。',
+       'Some societies have seen the erosion of some traditional values recently.',
+       'Some societies have seen...'],
+  [4,  '隨著越來越多學生出國留學，分析在國外完成大學教育的價值，是一件值得探討的事情。',
+       'As an increasing number of students study overseas, it is interesting to analyse the value of finishing a university education in a foreign country.',
+       'As an increasing number of...'],
+  [5,  '政府的主要職責是提升公民的生活水準。',
+       "The main duty of the government is to improve citizens' living standards.",
+       'The main duty of... is to...'],
+  [6,  '大學通常被認為是一個增進知識與進行學術研究的地方。',
+       'The university is normally considered as a place for increasing knowledge and conducting academic studies.',
+       '...is normally considered as...'],
+  [7,  '我的觀點是，不應該鼓勵私人擁有汽車。',
+       'I am of the opinion that car ownership should be discouraged.',
+       'I am of the opinion that...'],
+  [8,  '從個人角度來看，減少不必要的旅行是有必要的。',
+       'From a personal point of view, it is necessary to discourage non-essential travel.',
+       'From a personal point of view...'],
+  [9,  '關於擁有汽車的問題與好處，將在下文進行討論。',
+       'The problems and benefits of car ownership will be discussed below.',
+       'The problems and benefits of... will be discussed below.'],
+  [10, '本文將簡要探討監禁制度相較於職業培訓的優缺點。',
+       'This essay will briefly review the pros and cons of imprisonment in comparison with job training.',
+       'This essay will briefly review the pros and cons of...'],
+];
+
+// Section headers: keyed by the FIRST sentence id in that section
+const C_SECTIONS = {
+  1: { title: '第一句・方法 1：強調話題長期存在爭議或現象' },
+  3: { title: '第一句・方法 2：以最近事件切入討論' },
+  5: { title: '第一句・方法 3：定義具體對象或人物' },
+  7: { title: '第三句・方法 1：表明立場' },
+  9: { title: '第三句・方法 2：簡介主體段落將討論的內容' },
+};
+
+let cChecked={}, cFills={}, cMode='read', cShowPatterns=false;
+try{ const s=localStorage.getItem('intro_ck'); if(s) cChecked=JSON.parse(s); }catch(e){}
+function cSave(){ try{ localStorage.setItem('intro_ck',JSON.stringify(cChecked)); }catch(e){} }
+
+function cUpdateStats(){
+  document.getElementById('c-done').textContent=Object.values(cChecked).filter(Boolean).length;
+}
+
+function cNorm(s){
+  return s.toLowerCase()
+    .replace(/[''`]/g,"'")
+    .replace(/\s+/g,' ')
+    .replace(/[.,!?;:]/g,'')
+    .replace(/\banalyse\b/g,'analyze')
+    .replace(/\banalyze\b/g,'analyze')
+    .trim();
+}
+function cGradeAnswer(input, ref){
+  if(!input.trim()) return null;
+  const a = cNorm(input), b = cNorm(ref);
+  if(a === b) return true;
+  // allow partial match for long sentences (≥80% overlap)
+  if(a.length >= b.length * 0.75 && b.includes(a.slice(0, Math.floor(a.length*0.8)))) return true;
+  return false;
+}
+
+function cGrade(){
+  let ok=0, no=0;
+  document.querySelectorAll('#c-list .intro-fill-input').forEach(inp=>{
+    const val=inp.value.trim();
+    if(!val){ inp.classList.remove('ok','no'); return; }
+    const n=parseInt(inp.dataset.n);
+    const row=C_DATA[n-1];
+    const res=cGradeAnswer(val, row[2]);
+    inp.classList.toggle('ok', res===true);
+    inp.classList.toggle('no', res===false);
+    const hint=inp.closest('.intro-fill-wrap')?.querySelector('.intro-fill-hint');
+    if(hint){
+      if(res===false){ hint.textContent='參考答案：'+row[2]; hint.classList.add('show'); }
+      else hint.classList.remove('show');
+    }
+    if(res===true) ok++; else if(res===false) no++;
+  });
+  document.getElementById('c-ok').textContent=ok;
+  document.getElementById('c-no').textContent=no;
+}
+
+function cClear(){
+  document.querySelectorAll('#c-list .intro-fill-input').forEach(i=>{i.value='';i.classList.remove('ok','no');});
+  document.querySelectorAll('#c-list .intro-fill-hint').forEach(h=>h.classList.remove('show'));
+  cFills={};
+  document.getElementById('c-ok').textContent=0;
+  document.getElementById('c-no').textContent=0;
+}
+
+function cRender(){
+  const list=document.getElementById('c-list');
+  const mb=document.getElementById('c-modebar');
+  list.innerHTML='';
+  const hints={
+    'read': '📖 閱讀模式：中英文都顯示，可搭配句型提示複習',
+    'blank': '✏️ 填空模式：請將中文翻譯成英文，完成後點「批改」'
+  };
+  mb.textContent=hints[cMode];
+
+  C_DATA.forEach(row=>{
+    const [n, zh, eng, pattern]=row;
+
+    // Section divider
+    if(C_SECTIONS[n]){
+      const sec=document.createElement('div');
+      sec.className='c-section-div';
+      const titleRow=document.createElement('div');
+      titleRow.className='c-section-title';
+      titleRow.textContent=C_SECTIONS[n].title;
+      sec.appendChild(titleRow);
+      list.appendChild(sec);
+    }
+
+    const card=document.createElement('div');
+    card.className='intro-card'+(cChecked[n]?' done':'');
+
+    // Card top
+    const top=document.createElement('div'); top.className='intro-top';
+    const numEl=document.createElement('div'); numEl.className='card-num'; numEl.textContent=n;
+    const body=document.createElement('div'); body.className='intro-body';
+    const zhEl=document.createElement('div'); zhEl.className='intro-zh'; zhEl.textContent=zh;
+    body.appendChild(zhEl);
+
+    // Pattern tag (toggleable)
+    const patTag=document.createElement('div');
+    patTag.className='intro-pattern-tag'+(cShowPatterns?' show':'');
+    patTag.textContent='💡 '+pattern;
+    body.appendChild(patTag);
+
+    const cbWrap=document.createElement('div'); cbWrap.className='intro-cb';
+    const cb=document.createElement('input'); cb.type='checkbox'; cb.checked=!!cChecked[n];
+    cb.addEventListener('change',e=>{
+      cChecked[n]=e.target.checked;
+      card.classList.toggle('done',e.target.checked);
+      cSave(); cUpdateStats();
+    });
+    cbWrap.appendChild(cb);
+    top.appendChild(numEl); top.appendChild(body); top.appendChild(cbWrap);
+    card.appendChild(top);
+
+    // Answer area
+    const aa=document.createElement('div'); aa.className='intro-ans-area';
+
+    if(cMode==='read'){
+      // Show the English answer directly
+      const refEl=document.createElement('div'); refEl.className='intro-ans-ref';
+      refEl.textContent=eng;
+      aa.appendChild(refEl);
+    } else {
+      // Fill mode: input + reveal button
+      const fw=document.createElement('div'); fw.className='intro-fill-wrap';
+      const fi=document.createElement('input'); fi.type='text'; fi.className='intro-fill-input';
+      fi.placeholder='請輸入英文翻譯…'; fi.dataset.n=n;
+      fi.value=cFills[n]||'';
+      fi.addEventListener('input',e=>{ cFills[n]=e.target.value; });
+      const fh=document.createElement('div'); fh.className='intro-fill-hint';
+      fw.appendChild(fi); fw.appendChild(fh); aa.appendChild(fw);
+
+      // Reveal button
+      const refEl=document.createElement('div'); refEl.className='intro-ans-ref hidden';
+      refEl.textContent=eng;
+      const rv=document.createElement('button'); rv.className='intro-reveal-btn'; rv.textContent='顯示答案';
+      rv.addEventListener('click',()=>{ refEl.classList.remove('hidden'); rv.style.display='none'; });
+      aa.appendChild(refEl);
+      aa.appendChild(rv);
+    }
+
+    card.appendChild(aa);
+    list.appendChild(card);
+  });
+
+  cUpdateStats();
+}
+
+document.querySelectorAll('[data-cmode]').forEach(btn=>btn.addEventListener('click',()=>{
+  cMode=btn.dataset.cmode;
+  document.querySelectorAll('[data-cmode]').forEach(b=>b.classList.remove('on-c'));
+  btn.classList.add('on-c');
+  cRender();
+}));
+document.getElementById('c-grade').addEventListener('click',cGrade);
+document.getElementById('c-clear').addEventListener('click',cClear);
+document.getElementById('c-reset').addEventListener('click',()=>{
+  if(!confirm('確定重置所有勾選？')) return;
+  cChecked={}; cSave(); cRender();
+});
+const patBtn=document.getElementById('c-pattern');
+patBtn.addEventListener('click',()=>{
+  cShowPatterns=!cShowPatterns;
+  patBtn.classList.toggle('pat-on',cShowPatterns);
+  patBtn.textContent=cShowPatterns?'💡 句型提示 ON':'💡 句型提示';
+  document.querySelectorAll('#c-list .intro-pattern-tag').forEach(t=>t.classList.toggle('show',cShowPatterns));
+});
+
+// ── Init all tabs ──
 aRender();
 bRender();
+cRender();
 </script>
 </body>
 </html>
