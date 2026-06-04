@@ -46,6 +46,11 @@
   --vc-section:#e4eef0;
   --vc-pattern:#1a6d80;
   --vc-pattern-bg:#dff0f5;
+  /* Tab D — Essay Phrases (orange) */
+  --vd:#7a3a10;
+  --vd-light:#fdf0e6;
+  --vd-mid:#c45e1a;
+  --vd-star:#c8963a;
 }
 body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.65}
 
@@ -60,6 +65,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 .tab-btn.active-a{color:var(--va);border-bottom-color:var(--va)}
 .tab-btn.active-b{color:var(--vb);border-bottom-color:var(--vb)}
 .tab-btn.active-c{color:var(--vc);border-bottom-color:var(--vc)}
+.tab-btn.active-d{color:var(--vd);border-bottom-color:var(--vd)}
 
 /* ── Tab panels ── */
 .panel{display:none}
@@ -70,6 +76,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 .hd-a{background:var(--va);box-shadow:0 2px 14px rgba(74,63,143,.2)}
 .hd-b{background:var(--vb);box-shadow:0 2px 14px rgba(45,80,22,.2)}
 .hd-c{background:var(--vc);box-shadow:0 2px 14px rgba(13,101,119,.2)}
+.hd-d{background:var(--vd);box-shadow:0 2px 14px rgba(122,58,16,.2)}
 .hd-inner{max-width:900px;margin:0 auto}
 .hd-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:.4rem}
 .hd h1{font-family:'Noto Serif TC',serif;font-size:15px;font-weight:600;flex:1}
@@ -94,6 +101,8 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 .btn.pb:hover{background:#234010}
 .btn.pc{background:var(--vc);color:#fff;border-color:var(--vc);font-weight:500}
 .btn.pc:hover{background:#0a4d5c}
+.btn.pd{background:var(--vd);color:#fff;border-color:var(--vd);font-weight:500}
+.btn.pd:hover{background:#5a2a08}
 .btn.danger{color:var(--red);border-color:var(--red)}
 .btn.danger:hover{background:var(--red-bg)}
 .btn.note-on{background:var(--vb-gold-bg);border-color:var(--vb-gold);color:var(--vb-gold);font-weight:500}
@@ -107,6 +116,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 .pill.on-a{background:var(--va-light);border-color:var(--va-mid);color:var(--va);font-weight:500}
 .pill.on-b{background:var(--vb-light);border-color:var(--vb-mid);color:var(--vb);font-weight:500}
 .pill.on-c{background:var(--vc-light);border-color:var(--vc-mid);color:var(--vc);font-weight:500}
+.pill.on-d{background:var(--vd-light);border-color:var(--vd-mid);color:var(--vd);font-weight:500}
 
 /* ── Mode hint bar ── */
 .mode-bar{background:var(--surface);border:.5px solid var(--border);border-radius:var(--rs);padding:6px 12px;margin-bottom:.7rem;font-size:12px;color:var(--muted)}
@@ -221,6 +231,11 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
       <span class="tab-icon">🔑</span>
       <span class="tab-label">引言句型</span>
       <span class="tab-sub">中翻英練習</span>
+    </button>
+    <button class="tab-btn" id="tab-d-btn" onclick="switchTab('d')">
+      <span class="tab-icon">🖊️</span>
+      <span class="tab-label">大作文詞組</span>
+      <span class="tab-sub">60個高分片語</span>
     </button>
   </div>
 </nav>
@@ -365,6 +380,56 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════
+     PANEL D — ESSAY PHRASES VOCAB
+══════════════════════════════════════════ -->
+<div class="panel" id="panel-d">
+
+  <header class="hd hd-d">
+    <div class="hd-inner">
+      <div class="hd-top">
+        <h1>大作文高分詞組練習</h1>
+        <span class="hd-sub">選自老師批改範文中的紅色片語</span>
+      </div>
+      <div class="hd-stats">
+        <div class="hd-chip">已學習 <strong id="d-learned">0</strong>/60</div>
+        <div class="hd-chip">填空正確 <strong id="d-ok">0</strong></div>
+        <div class="hd-chip">填空錯誤 <strong id="d-no">0</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="ctrl-bar">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="d-search" placeholder="搜尋中文或英文…"/>
+      </div>
+      <button class="btn pd" id="d-grade">✓ 批改</button>
+      <button class="btn" id="d-clear">清除</button>
+      <button class="btn danger" id="d-reset">重置勾選</button>
+    </div>
+
+    <div class="pill-bar">
+      <span class="pill-lbl">顯示：</span>
+      <button class="pill on-d" data-dmode="all">中英都顯示</button>
+      <button class="pill" data-dmode="hide-chi">隱藏中文</button>
+      <button class="pill" data-dmode="hide-eng">隱藏英文</button>
+    </div>
+
+    <div class="pill-bar">
+      <span class="pill-lbl">篩選：</span>
+      <button class="pill on-d" data-dfilter="all">全部</button>
+      <button class="pill" data-dfilter="learned">已勾選</button>
+      <button class="pill" data-dfilter="unlearned">未勾選</button>
+      <button class="pill" data-dfilter="5star">★★★★★</button>
+    </div>
+
+    <div id="d-list"></div>
+    <div id="d-empty" class="empty" style="display:none">沒有符合條件的詞彙</div>
+  </div>
+</div>
+
 <script>
 // ─────────────────────────────────────────────────────────────────
 // TAB SWITCHING
@@ -372,18 +437,15 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--text
 let currentTab = 'a';
 function switchTab(t){
   currentTab = t;
-  document.getElementById('panel-a').classList.toggle('active', t==='a');
-  document.getElementById('panel-b').classList.toggle('active', t==='b');
-  document.getElementById('panel-c').classList.toggle('active', t==='c');
-  document.getElementById('tab-a-btn').className = 'tab-btn' + (t==='a' ? ' active-a' : '');
-  document.getElementById('tab-b-btn').className = 'tab-btn' + (t==='b' ? ' active-b' : '');
-  document.getElementById('tab-c-btn').className = 'tab-btn' + (t==='c' ? ' active-c' : '');
+  ['a','b','c','d'].forEach(x=>{
+    document.getElementById('panel-'+x).classList.toggle('active', t===x);
+    document.getElementById('tab-'+x+'-btn').className = 'tab-btn' + (t===x ? ' active-'+x : '');
+  });
   try{ localStorage.setItem('ielts_tab', t); }catch(e){}
 }
 try{
   const saved = localStorage.getItem('ielts_tab');
-  if(saved === 'b') switchTab('b');
-  else if(saved === 'c') switchTab('c');
+  if(['b','c','d'].includes(saved)) switchTab(saved);
 }catch(e){}
 
 // ─────────────────────────────────────────────────────────────────
@@ -1022,10 +1084,186 @@ patBtn.addEventListener('click',()=>{
   document.querySelectorAll('#c-list .intro-pattern-tag').forEach(t=>t.classList.toggle('show',cShowPatterns));
 });
 
+// ─────────────────────────────────────────────────────────────────
+// TAB D — ESSAY PHRASES DATA & LOGIC
+// ─────────────────────────────────────────────────────────────────
+const ESSAY_DATA = [
+  // ── 選擇過多 (Too Many Choices) ──
+  [1,"an abundance of options","大量的選項","★★★★★"],
+  [2,"excessive choices","過多的選擇","★★★★★"],
+  [3,"in many areas of life","在生活的許多方面","★★★★"],
+  [4,"are exposed to more opportunities than ever before","接觸到比以往更多的機會","★★★★★"],
+  [5,"One clear example can be seen in...","一個明顯的例子可以從...中看出（論點展開句型）","★★★★★"],
+  [6,"their choices were relatively limited","他們的選擇相對有限","★★★★"],
+  [7,"search on social media / online shopping platforms","在社交媒體／網路購物平台上搜尋","★★★★★"],
+  [8,"review websites","評論網站","★★★"],
+  [9,"before purchasing anything","在購買任何東西之前","★★★"],
+  [10,"spent a long time comparing different brands, styles, and prices","花了很長時間比較不同品牌、款式和價格","★★★★"],
+  [11,"try on in person","親自試穿","★★★"],
+  [12,"exhausting and time-consuming","費神又費時","★★★★★"],
+  [13,"unnecessarily complicated","不必要地複雜","★★★★"],
+  [14,"too many choices can sometimes make simple decisions unnecessarily complicated","過多選擇有時會使簡單的決定變得不必要地複雜","★★★★★"],
+  [15,"modern society offers far more... than in the past","現代社會提供比過去多得多的...","★★★★★"],
+  // ── 遠距學習 (Distance Learning) ──
+  [16,"Previously","以前（段落連接詞）","★★★★★"],
+  [17,"followed traditional family occupations","遵循傳統的家族職業","★★★★"],
+  [18,"opportunities were limited","機會受限","★★★★"],
+  [19,"are encouraged to choose their own educational paths and careers","被鼓勵選擇自己的教育路徑和職業","★★★★★"],
+  [20,"according to their interests","根據自己的興趣","★★★★★"],
+  [21,"While the freedom is beneficial, it also places pressure on...","雖然自由是有益的，但也給...帶來了壓力","★★★★★"],
+  [22,"lead to anxiety and uncertainty","導致焦慮和不確定感","★★★★★"],
+  [23,"process large amounts of information","處理大量資訊","★★★★"],
+  [24,"greater flexibility and independence","更大的靈活性和獨立性","★★★★★"],
+  [25,"With the rapid development of technology","隨著科技的快速發展（開頭句）","★★★★★"],
+  [26,"take distance-learning programs to get a degree","參加遠距學習課程以取得學位","★★★★"],
+  [27,"rather than attending a physical college","而非就讀實體大學","★★★★"],
+  [28,"offer great benefits, especially regarding flexibility","在靈活性方面提供極大的好處","★★★★★"],
+  [29,"irreplaceable value","不可替代的價值","★★★★★"],
+  [30,"On the one hand","一方面（段落連接詞）","★★★★★"],
+  [31,"On the other hand","另一方面（段落連接詞）","★★★★★"],
+  [32,"receive the same education as students who live in big cities","獲得與大城市學生相同的教育","★★★★"],
+  [33,"traveling to campus every day is difficult","每天通勤到校園很困難","★★★"],
+  [34,"provide a perfect solution for them to improve their skills without quitting their job","提供完美的解決方案讓他們在不辭職的情況下提升技能","★★★★★"],
+  [35,"it still has some drawbacks","仍然有一些缺點","★★★★★"],
+  [36,"communicate with teachers and classmates more easily","更輕鬆地與老師和同學交流","★★★★"],
+  [37,"Making friends and building social networks","交朋友並建立社交人脈","★★★★★"],
+  [38,"is something that distance-learning cannot genuinely experience","是遠距學習無法真正體驗的","★★★★"],
+  [39,"although... provides great freedom and convenience","儘管...提供了極大的自由與便利","★★★★★"],
+  [40,"provides essential social experience","提供不可或缺的社交經驗","★★★★"],
+  // ── 高等教育費用 (Tuition Fees) ──
+  [41,"cover the cost of higher education","負擔高等教育的費用","★★★★★"],
+  [42,"students should be responsible for the cost themselves","學生應自己負責費用","★★★★"],
+  [43,"focus primarily on their studies rather than financial burden","主要專注於學習而非財務負擔","★★★★★"],
+  [44,"financial burden","財務負擔","★★★★★"],
+  [45,"struggle to concentrate on their academic performance","難以專注於學業表現","★★★★★"],
+  [46,"physically demanding and time-consuming","體力消耗大且費時","★★★★"],
+  [47,"negatively affect students' learning efficiency and mental health","負面影響學生的學習效率與心理健康","★★★★★"],
+  [48,"government-funded education","政府資助的教育","★★★★★"],
+  [49,"devote more time and energy to developing professional knowledge and skills","將更多時間和精力投入培養專業知識和技能","★★★★★"],
+  [50,"access to education should not depend on a person's financial background","受教育的機會不應取決於個人的經濟背景","★★★★★"],
+  [51,"a basic right that should be available to everyone equally","應人人平等享有的基本權利","★★★★★"],
+  [52,"students from low-income families","來自低收入家庭的學生","★★★★★"],
+  [53,"lose the opportunity to attend university","失去就讀大學的機會","★★★★"],
+  [54,"widen the gap between rich and poor","擴大貧富差距","★★★★★"],
+  [55,"reduce social equality","降低社會平等","★★★★"],
+  [56,"affordable higher education","負擔得起的高等教育","★★★★★"],
+  [57,"ensure that all citizens have equal education opportunities","確保所有公民享有平等的教育機會","★★★★★"],
+  [58,"concentrate on learning","專注於學習","★★★★★"],
+  [59,"everyone deserves equal access to education regardless of economic status","每個人都應享有平等受教育的機會，不論其經濟狀況","★★★★★"],
+  [60,"I believe that... although this provides greater flexibility and independence, it also causes pressure","我認為...雖然這提供了更大的靈活性和獨立性，但也帶來了壓力","★★★★★"],
+];
+
+let dChecked={}, dFills={}, dMode='all', dFilter='all', dSearch='';
+try{ const s=localStorage.getItem('essay_ck'); if(s) dChecked=JSON.parse(s); }catch(e){}
+function dSave(){ try{ localStorage.setItem('essay_ck',JSON.stringify(dChecked)); }catch(e){} }
+
+function dNorm(str){
+  return str.toLowerCase().replace(/[''`]/g,"'").replace(/[,\/·⋯…]/g,' ').replace(/\s+/g,' ').trim();
+}
+function dCheckEng(input,eng){
+  const a=dNorm(input),b=dNorm(eng);
+  if(a===b) return true;
+  return eng.split(/[\/,]/).map(p=>dNorm(p.trim())).filter(p=>p.length>2).some(p=>a===p);
+}
+function dCheckChi(input,chi){
+  return input.trim().replace(/\s/g,'')===chi.replace(/\s/g,'');
+}
+function dUpdateStats(){
+  document.getElementById('d-learned').textContent=Object.values(dChecked).filter(Boolean).length;
+}
+function dGrade(){
+  let ok=0,no=0;
+  document.querySelectorAll('#d-list .fill-input-v').forEach(inp=>{
+    const val=inp.value.trim(); if(!val){ inp.classList.remove('correct','wrong'); return; }
+    const n=parseInt(inp.dataset.n), type=inp.dataset.type, row=ESSAY_DATA[n-1];
+    const correct = type==='eng' ? dCheckEng(val,row[1]) : dCheckChi(val,row[2]);
+    inp.classList.toggle('correct',correct); inp.classList.toggle('wrong',!correct);
+    const hint=inp.parentElement.querySelector('.fill-answer');
+    if(hint){ if(!correct){ hint.textContent='正確答案：'+(type==='eng'?row[1]:row[2]); hint.classList.add('show'); } else hint.classList.remove('show'); }
+    if(correct) ok++; else no++;
+  });
+  document.getElementById('d-ok').textContent=ok;
+  document.getElementById('d-no').textContent=no;
+}
+function dClear(){
+  document.querySelectorAll('#d-list .fill-input-v').forEach(i=>{i.value='';i.classList.remove('correct','wrong');});
+  document.querySelectorAll('#d-list .fill-answer').forEach(h=>h.classList.remove('show'));
+  dFills={};
+  document.getElementById('d-ok').textContent=0;
+  document.getElementById('d-no').textContent=0;
+}
+function dRender(){
+  const list=document.getElementById('d-list'), empty=document.getElementById('d-empty');
+  list.innerHTML='';
+  const q=dSearch.toLowerCase(); let count=0;
+  // Section labels
+  const sections={1:'📝 選擇過多 — Too Many Choices',16:'🎓 遠距學習 — Distance Learning',41:'🏛️ 高等教育費用 — Tuition Fees'};
+  ESSAY_DATA.forEach(([n,eng,chi,stars])=>{
+    if(q&&!eng.toLowerCase().includes(q)&&!chi.includes(q)) return;
+    if(dFilter==='learned'&&!dChecked[n]) return;
+    if(dFilter==='unlearned'&&dChecked[n]) return;
+    if(dFilter==='5star'&&stars!=='★★★★★') return;
+    count++;
+    // Section divider
+    if(sections[n]&&(dFilter==='all'||count===1)){
+      const sec=document.createElement('div');
+      sec.className='section-div';
+      sec.style.cssText='background:#fdf0e6;color:#7a3a10;';
+      sec.textContent=sections[n];
+      list.appendChild(sec);
+    }
+    const card=document.createElement('div');
+    card.className='vocab-card'+(dChecked[n]?' checked':'')+(dMode!=='all'?' '+dMode:'');
+    const main=document.createElement('div'); main.className='card-main';
+    main.innerHTML=`<div class="card-num">${n}</div><div class="card-eng">${eng}</div><div class="card-chi">${chi}</div><div class="card-stars" style="color:var(--vd-star)">${stars}</div><div class="card-cb"><input type="checkbox" ${dChecked[n]?'checked':''} data-n="${n}"/></div>`;
+    main.querySelector('input').addEventListener('change',e=>{
+      const num=parseInt(e.target.dataset.n); dChecked[num]=e.target.checked;
+      card.classList.toggle('checked',e.target.checked); dSave(); dUpdateStats();
+    });
+    card.appendChild(main);
+    const fillRow=document.createElement('div'); fillRow.className='fill-row';
+    const makeFill=(type,ph)=>{
+      const fw=document.createElement('div'); fw.className='fill-wrap-v';
+      fw.innerHTML=`<span class="fill-label">${type==='eng'?'填入英文':'填入中文'}</span>`;
+      const fi=document.createElement('input'); fi.type='text'; fi.className='fill-input-v';
+      fi.placeholder=ph; fi.dataset.n=n; fi.dataset.type=type;
+      fi.value=dFills[n+type]||'';
+      fi.addEventListener('input',e=>{ dFills[n+type]=e.target.value; });
+      const ans=document.createElement('div'); ans.className='fill-answer';
+      fw.appendChild(fi); fw.appendChild(ans); return fw;
+    };
+    if(dMode==='hide-eng'||dMode==='all') fillRow.appendChild(makeFill('eng','Type in English...'));
+    if(dMode==='hide-chi'||dMode==='all') fillRow.appendChild(makeFill('chi','輸入中文翻譯…'));
+    card.appendChild(fillRow);
+    list.appendChild(card);
+  });
+  empty.style.display=count===0?'block':'none';
+  dUpdateStats();
+}
+
+document.getElementById('d-search').addEventListener('input',e=>{ dSearch=e.target.value; dRender(); });
+document.querySelectorAll('[data-dmode]').forEach(btn=>btn.addEventListener('click',()=>{
+  dMode=btn.dataset.dmode;
+  document.querySelectorAll('[data-dmode]').forEach(b=>b.classList.remove('on-d'));
+  btn.classList.add('on-d'); dRender();
+}));
+document.querySelectorAll('[data-dfilter]').forEach(btn=>btn.addEventListener('click',()=>{
+  dFilter=btn.dataset.dfilter;
+  document.querySelectorAll('[data-dfilter]').forEach(b=>b.classList.remove('on-d'));
+  btn.classList.add('on-d'); dRender();
+}));
+document.getElementById('d-grade').addEventListener('click',dGrade);
+document.getElementById('d-clear').addEventListener('click',dClear);
+document.getElementById('d-reset').addEventListener('click',()=>{
+  if(!confirm('確定重置所有勾選？')) return;
+  dChecked={}; dSave(); dRender();
+});
+
 // ── Init all tabs ──
 aRender();
 bRender();
 cRender();
+dRender();
 </script>
 </body>
 </html>
